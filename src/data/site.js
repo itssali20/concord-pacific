@@ -2,7 +2,7 @@ export const IMG = (n) => `/images/${n}.webp`
 
 export const CONTACT = {
   email: import.meta.env.VITE_CONTACT_EMAIL || 'inquiries@concordpacificcorp.com',
-  phone: import.meta.env.VITE_CONTACT_PHONE || '+1 (310) 000-0000',
+  phone: import.meta.env.VITE_CONTACT_PHONE || '800-201-0145',
   city: 'Beverly Hills, California',
 }
 

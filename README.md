@@ -22,7 +22,7 @@ npm run preview    # preview the build
 |---|---|
 | `VITE_FORM_ENDPOINT` | Form POST endpoint (e.g. Formspree `https://formspree.io/f/xxxx`). If empty, forms open the visitor's email app. |
 | `VITE_CONTACT_EMAIL` | Public inquiry email (placeholder: inquiries@concordpacificcorp.com) |
-| `VITE_CONTACT_PHONE` | Public phone number (placeholder: +1 (310) 000-0000) |
+| `VITE_CONTACT_PHONE` | Public phone number (default: 800-201-0145) |
 
 ## Pages
 | Route | Page |
