@@ -667,6 +667,7 @@ a.ftr__link:hover { color: var(--bronze-2); transform: translateX(6px); }
 .ct__media { position: sticky; top: 0; height: 100vh; }
 .ct__media .media { position: absolute; inset: 0; }
 .ct__card { position: absolute; left: var(--gutter); bottom: 40px; right: var(--gutter); z-index: 2; color: var(--paper); display: flex; flex-direction: column; gap: 4px; padding: 28px; background: rgba(17, 18, 21, 0.55); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); max-width: 420px; }
+.ct__card .eyebrow { font-size: 17px; letter-spacing: 0.18em; margin-bottom: 10px; }
 .ct__card .h3 { margin-bottom: 14px; }
 .ct__card a:hover { color: var(--bronze-2); }
 .ct__body { padding: calc(var(--hdr) + 80px) var(--gutter) 100px; }
