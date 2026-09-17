@@ -450,6 +450,14 @@ function Film() {
         <p className="lead" data-fade>Architecture is experienced in movement — light travelling across stone, a room opening to the horizon. A closer look inside two signature interiors.</p>
       </div>
       <div className="wrap film__grid">
+        <figure className="film__item film__item--full">
+          <VideoMedia src="/videos/Fullvideo.mp4" alt="Concord Pacific — a cinematic tour of our residences" reveal="up" />
+          <figcaption data-fade>
+            <span>Film</span>
+            <h3>The Concord Pacific experience.</h3>
+            <p>A cinematic walkthrough of the craftsmanship, light and scale that define every residence.</p>
+          </figcaption>
+        </figure>
         <figure className="film__item film__item--a">
           <VideoMedia src="/videos/kitchen.mp4" poster="/videos/kitchen-poster.jpg" alt="Chef-grade kitchen with waterfall stone island" reveal="up" parallax="5" />
           <figcaption data-fade>

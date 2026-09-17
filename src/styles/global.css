@@ -733,6 +733,8 @@ a.ftr__link:hover { color: var(--bronze-2); transform: translateX(6px); }
 .film__head .lead { margin-top: 24px; }
 .film__grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(28px, 4vw, 72px); align-items: start; }
 .film__item { margin: 0; }
+.film__item--full { grid-column: 1 / -1; margin-bottom: clamp(12px, 2vw, 24px); }
+.film__item--full .media { aspect-ratio: 21 / 9; }
 .film__item--a { grid-column: 1 / span 7; }
 .film__item--b { grid-column: 8 / span 5; margin-top: clamp(70px, 11vw, 180px); }
 /* ratios track the source clips so object-fit: cover barely crops */
@@ -744,8 +746,9 @@ a.ftr__link:hover { color: var(--bronze-2); transform: translateX(6px); }
 .film__item figcaption p { color: var(--muted); max-width: 46ch; }
 @media (max-width: 900px) {
   .film__grid { grid-template-columns: 1fr; gap: clamp(40px, 9vw, 70px); }
-  .film__item--a, .film__item--b { grid-column: 1; }
+  .film__item--full, .film__item--a, .film__item--b { grid-column: 1; }
   .film__item--b { margin-top: 0; }
+  .film__item--full .media { aspect-ratio: 4 / 5; }
   .film__item--a .media, .film__item--b .media { aspect-ratio: 16 / 10; }
 }
 
