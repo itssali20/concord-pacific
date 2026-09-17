@@ -61,7 +61,7 @@ export default function useReveal(scope, extra, deps = []) {
             })
           })
           q('[data-img]').forEach((el) => {
-            const img = el.querySelector('img')
+            const img = el.querySelector('img, video')
             const dir = el.dataset.img || 'up'
             const from = { up: 'inset(100% 0% 0% 0%)', left: 'inset(0% 100% 0% 0%)', right: 'inset(0% 0% 0% 100%)', center: 'inset(50% 50% 50% 50%)' }[dir]
             const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: 'top 85%' } })
@@ -70,7 +70,7 @@ export default function useReveal(scope, extra, deps = []) {
           })
           q('[data-parallax]').forEach((el) => {
             const amt = parseFloat(el.dataset.parallax) || 12
-            const target = el.querySelector('img') || el
+            const target = el.querySelector('img, video') || el
             gsap.fromTo(target, { yPercent: -amt }, {
               yPercent: amt, ease: 'none',
               scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true },

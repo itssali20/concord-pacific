@@ -15,6 +15,30 @@ export function Media({ img, alt = '', reveal = 'up', parallax, className = '', 
   )
 }
 
+/** Background video that only plays while on screen. Muted + playsInline so autoplay is permitted. */
+export function VideoMedia({ src, poster, alt = '', reveal = 'up', parallax, className = '', cursor }) {
+  const el = useRef(null)
+  useLayoutEffect(() => {
+    const v = el.current
+    if (!v || reduceMotion()) return
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { const p = v.play(); if (p && p.catch) p.catch(() => {}) }
+        else v.pause()
+      })
+    }, { threshold: 0.2 })
+    io.observe(v)
+    return () => io.disconnect()
+  }, [])
+  return (
+    <div className={`media ${className}`} data-img={reveal || undefined} data-cursor={cursor}>
+      <div className="media__in" data-parallax={parallax}>
+        <video ref={el} src={src} poster={poster} muted loop playsInline preload="metadata" aria-label={alt} />
+      </div>
+    </div>
+  )
+}
+
 export function Btn({ to, href, children, variant = '', onClick, type }) {
   const inner = (<><span>{children}</span><i className="btn__arrow" /></>)
   const cls = `btn ${variant}`

@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react'
 import { gsap, ScrollTrigger, SplitText, reduceMotion } from '../lib/gsap'
 import { introDone } from '../lib/intro'
 import useReveal from '../lib/useReveal'
-import { Media, Btn, Eyebrow, Marquee, CtaBand } from '../components/UI'
+import { Media, VideoMedia, Btn, Eyebrow, Marquee, CtaBand } from '../components/UI'
 import { TLink } from '../components/Transition'
 import { IMG, HERO_SLIDES, LOCATIONS, PILLARS, OPP_TYPES, CONTACT, MATERIALS, PROCESS, CEO } from '../data/site'
 import { DEVELOPMENTS } from '../data/developments'
@@ -437,6 +437,39 @@ function MaterialsSection() {
   )
 }
 
+/* ───────────── FILM: RESIDENCES IN MOTION ───────────── */
+function Film() {
+  const ref = useRef(null)
+  useReveal(ref)
+  return (
+    <section className="film" ref={ref}>
+      <div className="wrap film__head">
+        <Eyebrow n="09">Residences in Motion</Eyebrow>
+        <h2 className="h1" data-split>Spaces that move <em>you.</em></h2>
+        <p className="lead" data-fade>Architecture is experienced in movement — light travelling across stone, a room opening to the horizon. A closer look inside two signature interiors.</p>
+      </div>
+      <div className="wrap film__grid">
+        <figure className="film__item film__item--a">
+          <VideoMedia src="/videos/kitchen.mp4" poster="/videos/kitchen-poster.jpg" alt="Chef-grade kitchen with waterfall stone island" reveal="up" parallax="5" />
+          <figcaption data-fade>
+            <span>01 — Kitchen</span>
+            <h3>Engineered like fine furniture.</h3>
+            <p>Waterfall natural stone, custom millwork and professional appliances, opening to the terrace beyond.</p>
+          </figcaption>
+        </figure>
+        <figure className="film__item film__item--b">
+          <VideoMedia src="/videos/bedroom.mp4" poster="/videos/bedroom-poster.jpg" alt="Primary suite opening onto a sunset terrace" reveal="up" parallax="5" />
+          <figcaption data-fade>
+            <span>02 — Primary Suite</span>
+            <h3>A private floor, open to the light.</h3>
+            <p>Proportion, warmth and a wall of glass that dissolves into the California evening.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  )
+}
+
 /* ───────────── CONSTRUCTION: FROM VISION TO REALITY ───────────── */
 function Construction() {
   const ref = useRef(null)
@@ -602,6 +635,7 @@ export default function Home() {
       <Construction />
       <Interiors />
       <MaterialsSection />
+      <Film />
       <California />
       <Statement />
       <Opps />
