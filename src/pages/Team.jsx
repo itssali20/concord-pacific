@@ -3,10 +3,17 @@ import { gsap } from '../lib/gsap'
 import useReveal from '../lib/useReveal'
 import { PageHero, Media, Eyebrow, Marquee, CtaBand, Btn } from '../components/UI'
 import { DISCIPLINES, CEO, PROCESS, IMG } from '../data/site'
+import useSEO from '../lib/useSEO'
 
 const IMGS = ['estate-heritage', 'construction-site', 'construction-team-tall', 'interior-great-room', 'estate-fire-terrace', 'construction-plans', 'interior-theater']
 
 export default function Team() {
+  useSEO({
+    title: 'International Team',
+    description: 'International talent, one vision. Meet the architects, engineers, interior designers and builders behind Concord Pacific, Corp.',
+    path: '/international-team',
+    image: '/images/construction-team.webp',
+  })
   const ref = useRef(null)
   const [open, setOpen] = useState(0)
   useReveal(ref, (q, rm) => {

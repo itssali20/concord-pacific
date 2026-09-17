@@ -3,8 +3,15 @@ import { gsap, ScrollTrigger } from '../lib/gsap'
 import useReveal from '../lib/useReveal'
 import { PageHero, Media, Eyebrow, CtaBand, Marquee } from '../components/UI'
 import { IMG, MATERIALS } from '../data/site'
+import useSEO from '../lib/useSEO'
 
 export default function Materials() {
+  useSEO({
+    title: 'Design & Materials',
+    description: 'Kitchens, bathrooms, windows, natural stone, millwork and landscape — the craft behind every Concord Pacific, Corp. residence.',
+    path: '/design-and-materials',
+    image: '/images/materials-stone.webp',
+  })
   const ref = useRef(null)
   const [active, setActive] = useState(0)
 

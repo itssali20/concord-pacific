@@ -8,6 +8,7 @@ import InquiryForm from '../components/InquiryForm'
 import NotFound from './NotFound'
 import { IMG } from '../data/site'
 import { DEVELOPMENTS, getDev } from '../data/developments'
+import useSEO, { SITE } from '../lib/useSEO'
 
 const SECTIONS = ['Vision', 'Architecture', 'Residences', 'Interiors', 'Details', 'Location', 'Team', 'Inquiries']
 
@@ -38,6 +39,21 @@ export default function DevelopmentDetail() {
   }, [slug])
 
   useEffect(() => { setActive(0) }, [slug])
+  useSEO(d ? {
+    title: d.name,
+    description: `${d.tagline} ${d.vision}`.trim(),
+    path: `/developments/${d.slug}`,
+    image: IMG(d.hero),
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Residence',
+      name: d.name,
+      description: d.vision,
+      url: `${SITE}/developments/${d.slug}`,
+      image: `${SITE}${IMG(d.hero)}`,
+      address: { '@type': 'PostalAddress', addressLocality: d.area, addressRegion: 'CA', addressCountry: 'US' },
+    },
+  } : { noindex: true, title: 'Not Found', path: `/developments/${slug}` })
   if (!d) return <NotFound />
 
   const idx = DEVELOPMENTS.indexOf(d)

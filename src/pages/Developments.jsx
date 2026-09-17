@@ -5,8 +5,15 @@ import { PageHero, Eyebrow, CtaBand } from '../components/UI'
 import { TLink } from '../components/Transition'
 import { IMG } from '../data/site'
 import { DEVELOPMENTS, FILTERS, STATUSES } from '../data/developments'
+import useSEO from '../lib/useSEO'
 
 export default function Developments() {
+  useSEO({
+    title: 'Developments',
+    description: 'Private estates and condominium residences across Beverly Hills, Bel-Air and Greater Los Angeles. Explore the Concord Pacific, Corp. development portfolio.',
+    path: '/developments',
+    image: '/images/estate-heritage.webp',
+  })
   const ref = useRef(null)
   const grid = useRef(null)
   const [filter, setFilter] = useState('All')

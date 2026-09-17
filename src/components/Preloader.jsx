@@ -14,8 +14,16 @@ export default function Preloader() {
   const video = useRef(null)
   const [done, setDone] = useState(false)
 
+  const rm = reduceMotion()
+
   useLayoutEffect(() => {
-    if (reduceMotion()) { setDone(true); finishIntro(); return }
+    if (rm) {
+      // respect no-motion: skip the animated timeline and video, but still
+      // show the brand mark briefly instead of jumping straight to content
+      lockScroll(true)
+      const t = setTimeout(() => { lockScroll(false); setDone(true); finishIntro() }, 900)
+      return () => clearTimeout(t)
+    }
     lockScroll(true)
     // warm the hero images while the loader runs
     const loads = HERO_SLIDES.map((s) => new Promise((r) => { const i = new Image(); i.onload = i.onerror = r; i.src = IMG(s.img) }))
@@ -63,21 +71,27 @@ export default function Preloader() {
     <div className="pl" ref={root} role="status" aria-label="Loading">
       <div className="pl__cols">{[0, 1, 2, 3, 4].map((i) => <div className="pl__col" key={i} />)}</div>
       <div className="pl__inner">
-        <video
-          ref={video}
-          className="pl__video"
-          src={VIDEO_SRC}
-          poster={VIDEO_POSTER}
-          muted
-          playsInline
-          preload="auto"
-          aria-label="Concord Pacific, Corp."
-        />
-        <div className="pl__foot">
-          <span className="pl__count">000</span>
-          <span className="pl__bar"><i /></span>
-          <span>Exceptional Properties. Extraordinary Living.</span>
-        </div>
+        {rm ? (
+          <img className="pl__video" src={VIDEO_POSTER} alt="Concord Pacific, Corp." />
+        ) : (
+          <video
+            ref={video}
+            className="pl__video"
+            src={VIDEO_SRC}
+            poster={VIDEO_POSTER}
+            muted
+            playsInline
+            preload="auto"
+            aria-label="Concord Pacific, Corp."
+          />
+        )}
+        {!rm && (
+          <div className="pl__foot">
+            <span className="pl__count">000</span>
+            <span className="pl__bar"><i /></span>
+            <span>Exceptional Properties. Extraordinary Living.</span>
+          </div>
+        )}
       </div>
     </div>
   )

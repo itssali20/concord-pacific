@@ -4,6 +4,7 @@ import { introDone } from '../lib/intro'
 import useReveal from '../lib/useReveal'
 import { Media, VideoMedia, Btn, Eyebrow, Marquee, CtaBand } from '../components/UI'
 import { TLink } from '../components/Transition'
+import useSEO from '../lib/useSEO'
 import { IMG, HERO_SLIDES, LOCATIONS, PILLARS, OPP_TYPES, CONTACT, MATERIALS, PROCESS, CEO } from '../data/site'
 import { DEVELOPMENTS } from '../data/developments'
 
@@ -623,6 +624,11 @@ function Opps() {
 }
 
 export default function Home() {
+  useSEO({
+    description: 'Concord Pacific, Corp. is a Beverly Hills real estate development company creating exceptional private estates and luxury condominium residences in Beverly Hills, Bel-Air and Greater Los Angeles.',
+    path: '/',
+    image: '/images/estate-pool-sunset.webp',
+  })
   useLayoutEffect(() => { const t = setTimeout(() => { ScrollTrigger.sort(); ScrollTrigger.refresh() }, 800); return () => clearTimeout(t) }, [])
   return (
     <div>

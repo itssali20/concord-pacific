@@ -3,8 +3,15 @@ import useReveal from '../lib/useReveal'
 import { PageHero, Eyebrow } from '../components/UI'
 import InquiryForm from '../components/InquiryForm'
 import { IMG, OPPORTUNITIES, OPP_TYPES } from '../data/site'
+import useSEO from '../lib/useSEO'
 
 export default function Opportunities() {
+  useSEO({
+    title: 'Development Opportunities',
+    description: 'A discreet acquisition and business-development practice for property owners, brokers, investors and joint-venture partners.',
+    path: '/opportunities',
+    image: '/images/estate-summit.webp',
+  })
   const ref = useRef(null)
   const [topic, setTopic] = useState('Development Opportunities')
   const formRef = useRef(null)

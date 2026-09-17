@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import useReveal from '../lib/useReveal'
 import { PageHero, Media, Eyebrow, CtaBand, Btn } from '../components/UI'
 import { IMG } from '../data/site'
+import useSEO from '../lib/useSEO'
 
 const POINTS = [
   ['Headquartered in Beverly Hills', 'At the center of one of the world’s most sophisticated luxury residential markets.'],
@@ -12,6 +13,12 @@ const POINTS = [
 ]
 
 export default function Company() {
+  useSEO({
+    title: 'Company',
+    description: 'Concord Pacific, Corp. is headquartered in Beverly Hills, California, developing exceptional private estates and condominium residences across Beverly Hills, Bel-Air and Greater Los Angeles.',
+    path: '/company',
+    image: '/images/loc-beverly-hills-entry.webp',
+  })
   const ref = useRef(null)
   useReveal(ref)
   return (

@@ -1,7 +1,9 @@
 import { Btn } from '../components/UI'
 import { IMG } from '../data/site'
+import useSEO from '../lib/useSEO'
 
 export default function NotFound() {
+  useSEO({ title: 'Page Not Found', description: 'This page could not be found.', noindex: true })
   return (
     <section className="nf">
       <img src={IMG('estate-horizon')} alt="" />

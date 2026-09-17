@@ -316,7 +316,7 @@ main { position: relative; }
 .std__pin { height: 100vh; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(30px, 5vw, 90px); padding: calc(var(--hdr) + 20px) var(--gutter) 50px; align-items: center; }
 .std__left .h1 { font-size: clamp(38px, 4.2vw, 72px); }
 .std__list { list-style: none; padding: 0; margin: 44px 0 0; border-top: 1px solid var(--line-l); }
-.std__list li { display: flex; gap: 22px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--line-l); font-family: var(--serif); font-size: clamp(20px, 1.7vw, 28px); color: rgba(245, 242, 236, 0.35); transition: color 0.6s, padding 0.6s var(--ease); }
+.std__list li { display: flex; gap: 22px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--line-l); font-family: var(--serif); font-size: clamp(20px, 1.7vw, 28px); color: rgba(245, 242, 236, 0.35); transition: color 0.6s, padding 0.6s var(--ease); transform: translateZ(0); backface-visibility: hidden; }
 .std__list li span { font-family: var(--display); font-size: 10px; letter-spacing: 0.2em; color: var(--bronze-2); }
 .std__list li.is-on { color: var(--paper); padding-left: 16px; }
 .std__right { height: 100%; display: grid; grid-template-rows: 1fr auto; gap: 30px; min-height: 0; }
@@ -326,7 +326,7 @@ main { position: relative; }
 .std__counter { position: absolute; right: 20px; bottom: 16px; z-index: 5; font-family: var(--display); font-size: 11px; letter-spacing: 0.2em; background: rgba(17, 18, 21, 0.6); padding: 8px 14px; backdrop-filter: blur(8px); }
 .std__counter b { font-weight: 500; color: var(--bronze-2); }
 .std__descs { position: relative; min-height: 130px; }
-.std__desc { position: absolute; inset: 0; }
+.std__desc { position: absolute; inset: 0; transform: translateZ(0); backface-visibility: hidden; }
 .std__mimg { display: none; }
 .std__desc p { color: rgba(245, 242, 236, 0.72); max-width: 52ch; margin-top: 10px; }
 @media (max-width: 899px) {

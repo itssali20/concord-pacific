@@ -3,6 +3,7 @@ import { gsap } from '../lib/gsap'
 import useReveal from '../lib/useReveal'
 import { PageHero, Media, Eyebrow, CtaBand } from '../components/UI'
 import { IMG, GALLERY } from '../data/site'
+import useSEO from '../lib/useSEO'
 
 const PRINCIPLES = [
   ['Architecture that inspires.', 'estate-summit'],
@@ -14,6 +15,12 @@ const PRINCIPLES = [
 ]
 
 export default function Residences() {
+  useSEO({
+    title: 'Signature Residences',
+    description: 'The art of living well. Explore signature interiors, kitchens, primary suites and outdoor living spaces across the Concord Pacific, Corp. portfolio.',
+    path: '/signature-residences',
+    image: '/images/interior-great-room.webp',
+  })
   const ref = useRef(null)
   const gal = useRef(null)
   const [cat, setCat] = useState('Kitchens')

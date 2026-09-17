@@ -3,8 +3,15 @@ import { gsap } from '../lib/gsap'
 import useReveal from '../lib/useReveal'
 import { PageHero, Eyebrow, CtaBand } from '../components/UI'
 import { IMG, VISION } from '../data/site'
+import useSEO from '../lib/useSEO'
 
 export default function Vision() {
+  useSEO({
+    title: 'Our Vision',
+    description: 'Vision creates value. The principles behind Concord Pacific, Corp. — exceptional locations, architectural integrity, uncompromising quality and enduring value.',
+    path: '/our-vision',
+    image: '/images/estate-viewpoint.webp',
+  })
   const ref = useRef(null)
   useReveal(ref, (q, rm) => {
     const mm = gsap.matchMedia()
