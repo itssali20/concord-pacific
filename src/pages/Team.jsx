@@ -39,7 +39,7 @@ export default function Team() {
         <div className="wrap ceo__grid">
           <div className="ceo__media">
             <div className="ceo__frame" data-img="up"><img src={IMG('team-ceo-model')} alt="Roman Alexander, CEO, reviewing a residence model with the design team" loading="lazy" /></div>
-            <div className="ceo__frame ceo__frame--sm" data-img="left"><img src={IMG('team-ceo-office')} alt="Concord Pacific leadership in the Beverly Hills studio" loading="lazy" /></div>
+            <div className="ceo__frame ceo__frame--sm" data-img="left"><img src={IMG('team-ceo-portrait')} alt="Roman Alexander, CEO of Concord Pacific, Corp." loading="lazy" /></div>
           </div>
           <div className="ceo__txt">
             <Eyebrow n="02" light>Leadership</Eyebrow>
