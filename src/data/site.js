@@ -111,6 +111,12 @@ export const MATERIALS = [
     specs: ['Imported marble & quartzite', 'Wide-plank European oak', 'Bronze & brushed-metal accents', 'Hand-selected slabs', 'Plaster & natural finishes'],
   },
   {
+    id: 'flooring', t: 'Hardwood Flooring', line: 'Wide-plank European oak, underfoot throughout.', img: 'materials-floor-hardwood', alt: 'materials-floor-lifestyle',
+    gallery: ['materials-floor-species', 'materials-floor-closeup'],
+    d: 'Wide-plank European oak is hand-selected and finished in a range of tones — from bleached white oak to rich, dark walnut stains — laid throughout living and private spaces for warmth underfoot.',
+    specs: ['Wide-plank European oak', 'Hand-selected boards', 'Multiple stain tones', 'Site-finished for a seamless surface', 'Sound-dampening underlayment'],
+  },
+  {
     id: 'millwork', t: 'Millwork & Closets', line: 'Craftsmanship from structure through final hardware.', img: 'interior-closet', alt: 'interior-great-room',
     d: 'Custom millwork, dressing rooms and boutique-style closets with integrated lighting, glass-front display cabinetry, leather and wood finishes and bespoke hardware.',
     specs: ['Boutique dressing rooms', 'Glass-front display cases', 'Integrated LED lighting', 'Bespoke hardware', 'Library & paneled walls'],

@@ -77,6 +77,11 @@ export default function Materials() {
                 <ul className="mt__specs">
                   {m.specs.map((s) => <li key={s}><i />{s}</li>)}
                 </ul>
+                {m.gallery && (
+                  <div className="mt__gallery">
+                    {m.gallery.map((im) => <img key={im} src={IMG(im)} alt="" loading="lazy" />)}
+                  </div>
+                )}
               </div>
             </section>
           ))}
