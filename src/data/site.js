@@ -14,6 +14,7 @@ export const NAV = [
   { to: '/our-vision', label: 'Our Vision' },
   { to: '/international-team', label: 'International Team', short: 'Team' },
   { to: '/company', label: 'Company' },
+  { to: '/building-materials', label: 'Building Materials & Distribution', short: 'Building Materials' },
   { to: '/opportunities', label: 'Opportunities' },
   { to: '/contact', label: 'Contact' },
 ]
@@ -71,7 +72,7 @@ export const OPP_TYPES = [
   'Landowner Partnerships', 'Joint Ventures', 'Investment Opportunities', 'Broker Submissions',
 ]
 
-export const INQUIRY_TYPES = ['General Inquiries', 'Development Opportunities', 'Broker Submissions', 'Investment & Joint Ventures', 'Sales Inquiries']
+export const INQUIRY_TYPES = ['General Inquiries', 'Development Opportunities', 'Broker Submissions', 'Investment & Joint Ventures', 'Sales Inquiries', 'Building Materials & Distribution', 'Manufacturing Partnership']
 
 export const GALLERY = {
   Kitchens: ['interior-kitchen', 'interior-wine-dining', 'estate-reserve'],
@@ -153,4 +154,74 @@ export const PROCESS = [
   { k: 'Design', d: 'Architecture, engineering, interiors and landscape developed together from the first drawings.', img: 'team-office' },
   { k: 'Build', d: 'Experienced builders, engineers and master craftsmen translating drawings into reality on site.', img: 'construction-plans' },
   { k: 'Deliver', d: 'Final detailing, finishes and systems — residences of lasting architectural and real estate value.', img: 'estate-grand' },
+]
+
+/* Building Materials & Distribution — product categories */
+export const BM_PRODUCTS = [
+  {
+    id: 'kitchens', t: 'Kitchen Cabinets & Custom Cabinetry', line: 'Engineered like fine furniture.',
+    img: 'materials-kitchen-walnut', gallery: ['materials-kitchen-cream', 'materials-kitchen-island', 'materials-kitchen-woodfloor', 'materials-kitchen-marble', 'materials-kitchen-bar'],
+    d: 'We source kitchen cabinets, bathroom vanities, storage systems, and custom cabinetry designed for today’s residential market. We seek manufacturers capable of combining beautiful design, precise manufacturing, quality materials, durable finishes, efficient installation, and competitive project pricing.',
+    specs: ['Kitchen cabinets & bath vanities', 'Custom storage systems', 'Precise manufacturing', 'Durable finishes', 'Competitive project pricing'],
+  },
+  {
+    id: 'doors', t: 'Doors', line: 'Craftsmanship at the threshold.',
+    img: 'materials-door-collage', gallery: ['materials-door-woodgrain', 'materials-door-dark', 'materials-door-double-marble', 'materials-door-lit', 'materials-door-glassslat', 'materials-door-panel'],
+    d: 'We seek interior and exterior door manufacturers offering contemporary and traditional designs, exceptional craftsmanship, reliable hardware, durable finishes, and solutions suitable for both individual residences and large-scale development projects.',
+    specs: ['Interior & exterior designs', 'Contemporary & traditional styles', 'Reliable hardware', 'Durable finishes', 'Large-scale project capacity'],
+  },
+  {
+    id: 'garage-doors', t: 'Garage Doors & Garage Door Systems', line: 'Architecture, not just function.',
+    img: 'materials-garage-collage', gallery: ['materials-garage-dark', 'materials-garage-glass'],
+    d: 'We are interested in exceptional garage door manufacturers offering contemporary architectural designs, glass and aluminum systems, wood and wood-look finishes, advanced operating systems, insulation, security, and innovative engineering. Our goal is to provide garage door solutions that contribute to the architecture of the home rather than simply serve a functional purpose.',
+    specs: ['Glass & aluminum systems', 'Wood & wood-look finishes', 'Advanced operating systems', 'Insulation & security', 'Innovative engineering'],
+  },
+  {
+    id: 'windows', t: 'Windows & Window Systems', line: 'Views transformed into architecture.',
+    img: 'materials-glass-sunset', gallery: ['materials-glass-oceanview'],
+    d: 'We seek high-quality residential window systems that combine architectural design, energy efficiency, durability, engineering, and long-term performance.',
+    specs: ['Architectural design', 'Energy-efficient glazing', 'Durability & engineering', 'Long-term performance'],
+  },
+  {
+    id: 'sliding-glass', t: 'Sliding & Folding Glass Door Systems', line: 'Connecting indoor and outdoor living.',
+    img: 'materials-glass-sliding-collage', gallery: ['materials-glass-pool'],
+    d: 'Modern residential architecture increasingly depends on large openings, natural light, expansive views, and a seamless connection between interior and exterior spaces. Products of interest include sliding glass doors, folding glass doors, multi-panel sliding systems, bi-fold door systems, large-format architectural glass doors, and indoor-outdoor opening systems.',
+    specs: ['Multi-panel sliding systems', 'Bi-fold door systems', 'Large-format glass doors', 'Minimal architectural profiles', 'Indoor-outdoor opening systems'],
+  },
+  {
+    id: 'flooring', t: 'Hardwood Flooring & Premium Wood Surfaces', line: 'Natural materials. Exceptional interiors.',
+    img: 'materials-floor-hardwood', gallery: ['materials-floor-lifestyle', 'materials-floor-species', 'materials-floor-closeup'],
+    d: 'Concord Pacific Corp. seeks relationships with outstanding manufacturers of hardwood flooring, engineered hardwood, and premium wood flooring systems from around the world. We are particularly interested in exceptional wood quality, distinctive species and grains, wide-plank flooring, European and contemporary finishes, natural textures, herringbone and specialty patterns, advanced engineered construction, durability, dimensional stability, and responsible manufacturing.',
+    specs: ['Wide-plank & engineered hardwood', 'Distinctive species & grains', 'European & contemporary finishes', 'Herringbone & specialty patterns', 'Dimensional stability'],
+  },
+  {
+    id: 'roofing', t: 'Roofing Materials & Systems', line: 'Performance above everything.',
+    img: 'materials-roof-exterior', gallery: ['materials-roof-swatches', 'materials-roof-mediterranean'],
+    d: 'We seek manufacturers of roofing products that combine durability, weather performance, engineering, energy efficiency, attractive design, and competitive value.',
+    specs: ['Durability & weather performance', 'Advanced engineering', 'Energy efficiency', 'Attractive design', 'Competitive value'],
+  },
+]
+
+export const BM_PLATFORM = [
+  { k: 'Development', d: 'Residential and multifamily real estate development, from opportunity identification and planning through execution.', img: 'estate-grand' },
+  { k: 'Construction', d: 'Practical construction experience and an understanding of how buildings come together from concept through completion.', img: 'construction-team' },
+  { k: 'Global Sourcing', d: 'Continuous worldwide search for exceptional manufacturers, innovative technologies, and beautiful architectural products.', img: 'construction-plans' },
+  { k: 'Distribution', d: 'Connecting quality manufacturers with projects, builders, developers, architects, designers, and customers throughout California and the United States.', img: 'transformation' },
+]
+
+export const BM_PRIORITIES = [
+  'Exceptional Quality', 'Distinctive Design', 'Advanced Technology', 'Strong Engineering',
+  'Durability & Reliability', 'Energy Efficiency', 'Competitive Value', 'Reliable Manufacturing Capacity',
+]
+
+export const BM_SERVES = [
+  'Residential Developers', 'Multifamily Developers', 'Homebuilders', 'General Contractors', 'Custom Home Builders',
+  'Architects', 'Interior Designers', 'Construction Companies', 'Remodeling Companies', 'Property Owners & Investors', 'Building Material Dealers & Distributors',
+]
+
+export const BM_AUDIENCES = [
+  { k: 'Developers, Builders & Contractors', d: 'We can evaluate design specifications, product selection, quantities, construction schedules, lead times and delivery requirements for your project.', cta: 'Tell us about your project', topic: 'Building Materials & Distribution', img: 'materials-door-collage' },
+  { k: 'Architects & Designers', d: 'Explore a growing portfolio of kitchen, door, window, flooring and roofing products selected for today’s residential architecture.', cta: 'Explore our products', topic: 'Building Materials & Distribution', img: 'materials-glass-sliding-collage' },
+  { k: 'International Manufacturers', d: 'If your company manufactures an exceptional construction or architectural product and is seeking opportunities in California or the broader U.S. market, we’d like to hear from you.', cta: 'Introduce your company', topic: 'Manufacturing Partnership', img: 'materials-roof-mediterranean' },
+  { k: 'Distribution Partners', d: 'We can evaluate opportunities involving product representation, distribution, project applications, developer relationships and market development.', cta: 'Discuss U.S. distribution', topic: 'Manufacturing Partnership', img: 'materials-garage-collage' },
 ]

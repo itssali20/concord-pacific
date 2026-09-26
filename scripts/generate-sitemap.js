@@ -14,6 +14,7 @@ const staticRoutes = [
   { path: '/our-vision', priority: '0.7', changefreq: 'monthly' },
   { path: '/international-team', priority: '0.7', changefreq: 'monthly' },
   { path: '/company', priority: '0.7', changefreq: 'monthly' },
+  { path: '/building-materials', priority: '0.8', changefreq: 'monthly' },
   { path: '/opportunities', priority: '0.7', changefreq: 'monthly' },
   { path: '/contact', priority: '0.8', changefreq: 'monthly' },
 ]

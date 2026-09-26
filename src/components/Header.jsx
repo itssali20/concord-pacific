@@ -83,7 +83,7 @@ export default function Header() {
         <nav className="menu__nav">
           {NAV.map((n, i) => (
             <TLink key={n.to} to={n.to} className={`menu__link ${pathname === n.to ? 'is-active' : ''}`}
-              onMouseEnter={() => setHoverImg(['estate-grand', 'estate-heritage', 'interior-kitchen', 'materials-stone', 'estate-summit', 'construction-team-tall', 'team-office', 'estate-viewpoint', 'estate-fire-terrace'][i])}
+              onMouseEnter={() => setHoverImg(['estate-grand', 'estate-heritage', 'interior-kitchen', 'materials-stone', 'estate-summit', 'construction-team-tall', 'team-office', 'materials-door-collage', 'estate-viewpoint', 'estate-fire-terrace'][i])}
               onClick={() => setOpen(false)} data-hover>
               <span><em>{String(i + 1).padStart(2, '0')}</em>{n.label}</span>
             </TLink>

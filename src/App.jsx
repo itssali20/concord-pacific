@@ -14,6 +14,7 @@ import Vision from './pages/Vision'
 import Materials from './pages/Materials'
 import Team from './pages/Team'
 import Company from './pages/Company'
+import BuildingMaterials from './pages/BuildingMaterials'
 import Opportunities from './pages/Opportunities'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/our-vision" element={<Vision />} />
             <Route path="/international-team" element={<Team />} />
             <Route path="/company" element={<Company />} />
+            <Route path="/building-materials" element={<BuildingMaterials />} />
             <Route path="/opportunities" element={<Opportunities />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
