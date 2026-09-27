@@ -123,7 +123,7 @@ export const MATERIALS = [
     specs: ['Boutique dressing rooms', 'Glass-front display cases', 'Integrated LED lighting', 'Bespoke hardware', 'Library & paneled walls'],
   },
   {
-    id: 'lighting', t: 'Lighting & Technology', line: 'Light, climate and security — invisibly integrated.', img: 'interior-great-room', alt: 'amenity-lobby',
+    id: 'lighting', t: 'Lighting & Technology', line: 'Light, climate and security — invisibly integrated.', img: 'interior-living', alt: 'amenity-lobby',
     d: 'Architectural and decorative lighting design, whole-home automation, climate, audio-visual and security systems integrated into the architecture rather than added to it.',
     specs: ['Architectural lighting design', 'Whole-home automation', 'Integrated audio-visual', 'Security & access control', 'Energy-efficient climate systems'],
   },

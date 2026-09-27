@@ -10,7 +10,7 @@ export default function Materials() {
     title: 'Design & Materials',
     description: 'Kitchens, bathrooms, windows, natural stone, millwork and landscape — the craft behind every Concord Pacific, Corp. residence.',
     path: '/design-and-materials',
-    image: '/images/materials-stone.webp',
+    image: '/images/interior-great-room.webp',
   })
   const ref = useRef(null)
   const [active, setActive] = useState(0)
@@ -36,7 +36,7 @@ export default function Materials() {
 
   return (
     <div ref={ref}>
-      <PageHero img="materials-stone" eyebrow="Design & Materials" title={<>Every detail <em>matters.</em></>} sub="Kitchens, bathrooms, windows, natural stone, millwork and landscape — the craft behind every Concord Pacific residence." />
+      <PageHero img="interior-great-room" eyebrow="Design & Materials" title={<>Every detail <em>matters.</em></>} sub="Kitchens, bathrooms, windows, natural stone, millwork and landscape — the craft behind every Concord Pacific residence." />
 
       <section className="wrap mt-intro">
         <Eyebrow n="01">Craftsmanship</Eyebrow>
