@@ -843,6 +843,7 @@ a.ftr__link:hover { color: var(--bronze-2); transform: translateX(6px); }
 .tp__item--b { grid-column: 8 / 13; } .tp__item--b .media { aspect-ratio: auto; height: 0; padding-bottom: calc(100% * 1.2); }
 .tp__item--c { grid-column: 1 / 5; margin-top: -10%; } .tp__item--c .media { aspect-ratio: 3 / 4; }
 .tp__item--d { grid-column: 5 / 13; } .tp__item--d .media { aspect-ratio: 12 / 5; }
+.tp__item--video { grid-column: 1 / -1; } .tp__item--video .media { aspect-ratio: 16 / 9; }
 .tp__p { margin: clamp(40px, 6vw, 90px) 0 0 auto; }
 .proc { background: var(--ink); color: var(--paper); padding: clamp(80px, 10vw, 160px) 0; }
 .proc__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 60px; }

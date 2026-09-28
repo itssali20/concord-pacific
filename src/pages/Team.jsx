@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { gsap } from '../lib/gsap'
 import useReveal from '../lib/useReveal'
-import { PageHero, Media, Eyebrow, Marquee, CtaBand, Btn } from '../components/UI'
+import { PageHero, Media, VideoMedia, Eyebrow, Marquee, CtaBand, Btn } from '../components/UI'
 import { DISCIPLINES, CEO, PROCESS, IMG } from '../data/site'
 import useSEO from '../lib/useSEO'
 
@@ -58,10 +58,10 @@ export default function Team() {
           <h2 className="h1" data-split>Award-winning design. <em>International expertise.</em></h2>
         </div>
         <div className="tp__grid">
-          <figure className="tp__item tp__item--a"><Media img="team-office" reveal="left" /><figcaption>Planning, design & development — Beverly Hills studio</figcaption></figure>
-          <figure className="tp__item tp__item--b"><Media img="construction-team-tall" reveal="up" /><figcaption>Site review with engineers and builders</figcaption></figure>
-          <figure className="tp__item tp__item--c"><Media img="construction-site" reveal="up" /><figcaption>Structure & engineering</figcaption></figure>
-          <figure className="tp__item tp__item--d"><Media img="team-ceo-model" reveal="right" /><figcaption>Architectural model review</figcaption></figure>
+          <figure className="tp__item tp__item--video">
+            <VideoMedia src="/videos/pixverseVid.mp4" reveal="up" />
+            <figcaption>Planning, design & development — Beverly Hills studio</figcaption>
+          </figure>
         </div>
         <p className="lead tp__p" data-fade>Our projects are strengthened by talented professionals selected for the specific requirements of each development. This multidisciplinary team may include award-winning architects and interior designers, structural engineers, civil engineers, landscape architects, lighting specialists, technology consultants, builders and master craftsmen.</p>
       </section>

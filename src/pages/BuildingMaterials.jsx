@@ -45,7 +45,7 @@ export default function BuildingMaterials() {
 
   return (
     <div ref={ref}>
-      <PageHero img="construction-site" eyebrow="Building Materials & Distribution" title={<>Building homes. <em>Supplying the materials that build them.</em></>} sub="Development, construction, global sourcing and building material distribution — under one experienced organization." />
+      <PageHero img="interior-living" eyebrow="Building Materials & Distribution" title={<>Building homes. <em>Supplying the materials that build them.</em></>} sub="Development, construction, global sourcing and building material distribution — under one experienced organization." />
 
       <section className="wrap tm-intro">
         <Eyebrow n="01">From the Developer's Perspective</Eyebrow>
