@@ -151,7 +151,7 @@ export const CEO = {
 
 export const PROCESS = [
   { k: 'Plan', d: 'Site selection, feasibility, market potential and a singular vision for what the property can become.', img: 'construction-team' },
-  { k: 'Design', d: 'Architecture, engineering, interiors and landscape developed together from the first drawings.', img: 'team-office' },
+  { k: 'Design', d: 'Architecture, engineering, interiors and landscape developed together from the first drawings.', img: 'team-disciplines-overview' },
   { k: 'Build', d: 'Experienced builders, engineers and master craftsmen translating drawings into reality on site.', img: 'construction-plans' },
   { k: 'Deliver', d: 'Final detailing, finishes and systems — residences of lasting architectural and real estate value.', img: 'estate-grand' },
 ]

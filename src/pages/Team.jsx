@@ -58,10 +58,13 @@ export default function Team() {
           <h2 className="h1" data-split>Award-winning design. <em>International expertise.</em></h2>
         </div>
         <div className="tp__grid">
-          <figure className="tp__item tp__item--video">
-            <VideoMedia src="/videos/pixverseVid.mp4" reveal="up" />
+          <figure className="tp__item tp__item--a">
+            <VideoMedia src="/videos/pixverseVid.mp4" reveal="left" />
             <figcaption>Planning, design & development — Beverly Hills studio</figcaption>
           </figure>
+          <figure className="tp__item tp__item--b"><Media img="team-vision-reality" reveal="up" /><figcaption>From vision to reality</figcaption></figure>
+          <figure className="tp__item tp__item--c"><Media img="team-process-overview" reveal="up" /><figcaption>Site selection, feasibility & market potential</figcaption></figure>
+          <figure className="tp__item tp__item--d"><Media img="team-disciplines-overview" reveal="right" /><figcaption>Architecture, engineering, interiors & landscape</figcaption></figure>
         </div>
         <p className="lead tp__p" data-fade>Our projects are strengthened by talented professionals selected for the specific requirements of each development. This multidisciplinary team may include award-winning architects and interior designers, structural engineers, civil engineers, landscape architects, lighting specialists, technology consultants, builders and master craftsmen.</p>
       </section>

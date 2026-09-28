@@ -5,7 +5,7 @@ import useReveal from '../lib/useReveal'
 import { Media, VideoMedia, Btn, Eyebrow, Marquee, CtaBand } from '../components/UI'
 import { TLink } from '../components/Transition'
 import useSEO from '../lib/useSEO'
-import { IMG, HERO_SLIDES, LOCATIONS, PILLARS, OPP_TYPES, CONTACT, MATERIALS, PROCESS, CEO } from '../data/site'
+import { IMG, HERO_SLIDES, LOCATIONS, PILLARS, OPP_TYPES, CONTACT, MATERIALS, PROCESS } from '../data/site'
 import { DEVELOPMENTS } from '../data/developments'
 
 /* ───────────── HERO ───────────── */
@@ -336,19 +336,14 @@ function TeamSection() {
           <div data-fade="0.2"><Btn to="/international-team">Meet the disciplines</Btn></div>
         </div>
       </div>
-      <div className="wrap team__photos">
-        <figure className="team__ph team__ph--a">
-          <Media img="team-office" parallax="6" cursor="Team" />
-          <figcaption>The Concord Pacific development team · Beverly Hills</figcaption>
+      <div className="wrap team__photos tp__grid">
+        <figure className="tp__item tp__item--a">
+          <VideoMedia src="/videos/pixverseVid.mp4" reveal="left" />
+          <figcaption>Planning, design & development — Beverly Hills studio</figcaption>
         </figure>
-        <figure className="team__ph team__ph--b">
-          <Media img="team-ceo-model" reveal="right" />
-          <figcaption><b>{CEO.name}</b> · CEO, with architects and designers</figcaption>
-        </figure>
-        <figure className="team__ph team__ph--c">
-          <Media img="construction-plans" reveal="up" parallax="6" />
-          <figcaption>On site — architecture, engineering & construction</figcaption>
-        </figure>
+        <figure className="tp__item tp__item--b"><Media img="team-vision-reality" reveal="up" /><figcaption>From vision to reality</figcaption></figure>
+        <figure className="tp__item tp__item--c"><Media img="team-process-overview" reveal="up" /><figcaption>Site selection, feasibility & market potential</figcaption></figure>
+        <figure className="tp__item tp__item--d"><Media img="team-disciplines-overview" reveal="right" /><figcaption>Architecture, engineering, interiors & landscape</figcaption></figure>
       </div>
       <div className="wrap">
         <div className="team__drawing">
