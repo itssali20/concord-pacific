@@ -167,50 +167,101 @@ export const PROCESS = [
   { k: 'Deliver', d: 'Final detailing, finishes and systems — residences of lasting architectural and real estate value.', img: 'estate-grand' },
 ]
 
-/* Building Materials & Distribution — product categories */
+/* Building Materials & Architectural Products Distribution — product categories */
 export const BM_PRODUCTS = [
   {
-    id: 'kitchens', t: 'Kitchen Cabinets & Custom Cabinetry', line: 'Engineered like fine furniture.',
-    img: 'materials-kitchen-walnut', gallery: ['materials-kitchen-cream', 'materials-kitchen-island', 'materials-kitchen-woodfloor', 'materials-kitchen-marble', 'materials-kitchen-bar'],
-    d: 'We source kitchen cabinets, bathroom vanities, storage systems, and custom cabinetry designed for today’s residential market. We seek manufacturers capable of combining beautiful design, precise manufacturing, quality materials, durable finishes, efficient installation, and competitive project pricing.',
-    specs: ['Kitchen cabinets & bath vanities', 'Custom storage systems', 'Precise manufacturing', 'Durable finishes', 'Competitive project pricing'],
+    id: 'roofing', t: 'Roofing Materials', line: 'Roofing products for residential and commercial applications.',
+    img: 'roof-mediterranean-aerial', gallery: ['roof-modern-farmhouse', 'roof-slate-detail', 'materials-roof-swatches', 'materials-roof-mediterranean', 'materials-roof-exterior'],
+    d: 'Modular steel roofing systems in tile, slate, shake and modern flat profiles, in factory-painted and stone-coated finishes. Lightweight, corrosion-protected and engineered for extreme weather, they deliver the look of clay, slate or wood with the strength and longevity of steel.',
+    specs: ['Class 4 impact & Class A fire ratings', 'Engineered for hurricane-force winds', 'Painted & stone-coated steel finishes', 'Lightweight, solar-ready modular panels', 'Long-term transferable warranties'],
   },
   {
-    id: 'doors', t: 'Doors', line: 'Craftsmanship at the threshold.',
+    id: 'interior-doors', t: 'Interior Doors', line: 'Interior door products for a variety of architectural styles.',
+    img: 'interior-doors-lineup', ratio: '1282 / 713', gallery: ['door-col-glass', 'door-col-signature', 'door-col-inlay', 'door-col-milled', 'door-col-concealed'],
+    d: 'European-manufactured interior doors in five collections — glass-insert, signature, aluminum-inlay, 3D-milled and concealed-frame — with German-engineered decorative surfaces, enamel, wood-look and concrete-effect finishes, and satin, black or mirror glass.',
+    specs: ['Five collections, 200+ designs', 'German-engineered decorative surfaces', 'Enamel, oak, ash & concrete-effect finishes', 'Satin, black & mirror glass options', 'Concealed-frame flush doors'],
+  },
+  {
+    id: 'exterior-doors', t: 'Exterior Doors', line: 'Entry and exterior door systems.',
     img: 'materials-door-collage', gallery: ['materials-door-woodgrain', 'materials-door-dark', 'materials-door-double-marble', 'materials-door-lit', 'materials-door-glassslat', 'materials-door-panel'],
-    d: 'We seek interior and exterior door manufacturers offering contemporary and traditional designs, exceptional craftsmanship, reliable hardware, durable finishes, and solutions suitable for both individual residences and large-scale development projects.',
-    specs: ['Interior & exterior designs', 'Contemporary & traditional styles', 'Reliable hardware', 'Durable finishes', 'Large-scale project capacity'],
+    d: 'Entry and exterior door systems in contemporary and traditional designs — pivot and hinged entry doors, single and double doors, wood-grain and metal finishes and glass-insert models — selected for craftsmanship, security and durable, weather-resistant finishes.',
+    specs: ['Pivot & hinged entry doors', 'Single & double door systems', 'Wood-grain, metal & painted finishes', 'Glass-insert designs', 'Residential & development-scale supply'],
   },
   {
-    id: 'garage-doors', t: 'Garage Doors & Garage Door Systems', line: 'Architecture, not just function.',
-    img: 'materials-garage-collage', gallery: ['materials-garage-dark', 'materials-garage-glass'],
-    d: 'We are interested in exceptional garage door manufacturers offering contemporary architectural designs, glass and aluminum systems, wood and wood-look finishes, advanced operating systems, insulation, security, and innovative engineering. Our goal is to provide garage door solutions that contribute to the architecture of the home rather than simply serve a functional purpose.',
-    specs: ['Glass & aluminum systems', 'Wood & wood-look finishes', 'Advanced operating systems', 'Insulation & security', 'Innovative engineering'],
+    id: 'sliding-glass', t: 'Sliding Glass Doors', line: 'Architectural sliding glass door systems.',
+    img: 'materials-glass-sunset', gallery: ['materials-glass-pool'],
+    d: 'Architectural sliding glass door systems with slim frames and large-format glass panels that open living spaces to natural light, views and outdoor terraces.',
+    specs: ['Multi-panel sliding systems', 'Slim-frame profiles', 'Large-format glass panels', 'Pocketing & corner configurations', 'Residential & commercial applications'],
   },
   {
-    id: 'windows', t: 'Windows & Window Systems', line: 'Views transformed into architecture.',
-    img: 'materials-glass-sunset', gallery: ['materials-glass-oceanview'],
-    d: 'We seek high-quality residential window systems that combine architectural design, energy efficiency, durability, engineering, and long-term performance.',
-    specs: ['Architectural design', 'Energy-efficient glazing', 'Durability & engineering', 'Long-term performance'],
+    id: 'folding-glass', t: 'Folding Glass Doors', line: 'Folding and bi-fold systems for expansive architectural openings.',
+    img: 'materials-glass-oceanview', gallery: ['materials-glass-sliding-collage'],
+    d: 'Folding and bi-fold glass door systems that stack neatly to one side, opening entire walls to terraces, pools and gardens for true indoor-outdoor living.',
+    specs: ['Bi-fold & multi-panel folding systems', 'Fully opening wall configurations', 'Slim aluminum frames', 'Inswing & outswing configurations', 'Indoor-outdoor living spaces'],
   },
   {
-    id: 'sliding-glass', t: 'Sliding & Folding Glass Door Systems', line: 'Connecting indoor and outdoor living.',
-    img: 'materials-glass-sliding-collage', gallery: ['materials-glass-pool'],
-    d: 'Modern residential architecture increasingly depends on large openings, natural light, expansive views, and a seamless connection between interior and exterior spaces. Products of interest include sliding glass doors, folding glass doors, multi-panel sliding systems, bi-fold door systems, large-format architectural glass doors, and indoor-outdoor opening systems.',
-    specs: ['Multi-panel sliding systems', 'Bi-fold door systems', 'Large-format glass doors', 'Minimal architectural profiles', 'Indoor-outdoor opening systems'],
+    id: 'additional', t: 'Additional Building Materials', line: 'Other construction products and materials.',
+    img: 'gutter-soffit-eave', gallery: ['gutter-system', 'soffit-woodgrain', 'fence-steel', 'materials-kitchen-walnut', 'materials-floor-hardwood'],
+    d: 'Complementary construction products including steel gutter systems, PVC soffits and steel fencing — plus categories we are actively sourcing, such as kitchen cabinetry, garage doors, windows and hardwood flooring.',
+    specs: ['Steel gutter systems', 'PVC soffit panels', 'Steel fencing systems', 'Cabinetry, garage doors & windows', 'Hardwood & engineered flooring'],
+  },
+]
+
+export const BM_ROOF_SPECS = ['Class 4 impact rating', 'Class A fire rating', 'Hurricane-rated up to 180–200 mph', 'Miami-Dade / HVHZ options', 'Warranties up to lifetime', 'Solar-ready']
+
+export const BM_ROOF_PROFILES = [
+  { t: 'Barrel Tile Profile', d: 'A curved barrel-tile look for Mediterranean and Spanish-style architecture.', img: 'roof-profile-barrel', variants: ['roof-profile-barrel-sand'] },
+  { t: 'Classic Tile Profile', d: 'A traditional tile-inspired profile that suits most neighborhoods and HOA requirements.', img: 'roof-profile-classic', variants: ['roof-profile-classic-silver', 'roof-profile-tile-green'] },
+  { t: 'Modern Flat Profile', d: 'Clean flat-lock lines with raised ridges for contemporary homes.', img: 'roof-profile-modern', variants: ['roof-profile-modern-brown'] },
+  { t: 'Slate Profile', d: 'A flat, high-definition slate look with sharp architectural lines.', img: 'roof-profile-slate', variants: ['roof-profile-slate-brown'] },
+  { t: 'Wood Shake Profile', d: 'The character of cedar shake in painted steel, for Craftsman, rustic and cabin-style homes.', img: 'roof-profile-wood', variants: [] },
+  { t: 'Stone-Coated Steel', d: 'Natural stone granules bonded to steel for a textured matte finish, in barrel and slate profiles.', img: 'roof-profile-stone-barrel', variants: ['roof-profile-stone-slate'] },
+]
+
+export const BM_ROOF_ACCESSORIES = [
+  { t: 'Steel Gutter Systems', d: 'Seamless 26-gauge steel gutters with a complete system of corners, outlets, downspouts and hangers, in brown, white, black, graphite and red.', img: 'gutter-system', variants: ['gutter-black'] },
+  { t: 'PVC Soffit Panels', d: 'Two-layer PVC soffits in vented and solid panels, with wood-grain and solid colors that never need painting.', img: 'soffit-woodgrain', variants: ['soffit-home'] },
+  { t: 'Steel Fencing', d: 'Powder-coated tubular steel fence systems in anthracite and walnut, packaged ready to install.', img: 'fence-steel', variants: ['fence-walnut'] },
+]
+
+export const BM_ROOF_PROJECTS = [
+  'roof-modern-farmhouse', 'roof-mediterranean-aerial', 'roof-ranch-home', 'roof-gray-aerial', 'roof-night-home',
+  'roof-villa', 'roof-hip-aerial', 'roof-brown-tile', 'roof-residential-aerial', 'roof-slate-detail',
+]
+
+const DOOR_FINISHES = ['White enamel (RAL 9003)', 'Dark gray (RAL 7016)', 'Light gray (RAL 7044)', 'Gray oak', 'Cream oak', 'White ash']
+export const BM_DOOR_COLLECTIONS = [
+  {
+    t: 'Glass-Insert Collection', meta: '19 designs', img: 'door-col-glass',
+    d: 'Modern and classic doors with a German-made decorative coating and satin or black glass inserts.',
+    doors: ['door-glass-1', 'door-glass-2', 'door-glass-3', 'door-glass-4'], finishes: ['Alpine white', 'Matte gray', 'Matte cream', 'Matte black'],
   },
   {
-    id: 'flooring', t: 'Hardwood Flooring & Premium Wood Surfaces', line: 'Natural materials. Exceptional interiors.',
-    img: 'materials-floor-hardwood', gallery: ['materials-floor-lifestyle', 'materials-floor-species', 'materials-floor-closeup'],
-    d: 'Concord Pacific Corp. seeks relationships with outstanding manufacturers of hardwood flooring, engineered hardwood, and premium wood flooring systems from around the world. We are particularly interested in exceptional wood quality, distinctive species and grains, wide-plank flooring, European and contemporary finishes, natural textures, herringbone and specialty patterns, advanced engineered construction, durability, dimensional stability, and responsible manufacturing.',
-    specs: ['Wide-plank & engineered hardwood', 'Distinctive species & grains', 'European & contemporary finishes', 'Herringbone & specialty patterns', 'Dimensional stability'],
+    t: 'Signature Collection', meta: '100+ designs', img: 'door-col-signature',
+    d: 'Our broadest range of modern and classic designs, with wood-look and enamel surfaces and satin or black glass.',
+    doors: ['door-signature-1', 'door-signature-2', 'door-signature-3', 'door-signature-4'], finishes: DOOR_FINISHES,
   },
   {
-    id: 'roofing', t: 'Roofing Materials & Systems', line: 'Performance above everything.',
-    img: 'materials-roof-exterior', gallery: ['materials-roof-swatches', 'materials-roof-mediterranean'],
-    d: 'We seek manufacturers of roofing products that combine durability, weather performance, engineering, energy efficiency, attractive design, and competitive value.',
-    specs: ['Durability & weather performance', 'Advanced engineering', 'Energy efficiency', 'Attractive design', 'Competitive value'],
+    t: 'Aluminum-Inlay Collection', meta: '50+ designs', img: 'door-col-inlay',
+    d: 'Minimalist doors with aluminum inlays in gray, black or gold, white or black glass, mirror inserts and aluminum or ABS edges.',
+    doors: ['door-inlay-1', 'door-inlay-2', 'door-inlay-3', 'door-inlay-4'], finishes: [...DOOR_FINISHES, 'Gray concrete', 'Matte gray', 'Matte cream'],
   },
+  {
+    t: '3D-Milled Collection', meta: '35 designs', img: 'door-col-milled',
+    d: 'Modern-minimalist and neoclassical doors with 3D-milled relief surfaces and gray or black aluminum edges.',
+    doors: ['door-milled-1', 'door-milled-2', 'door-milled-3', 'door-milled-4'], finishes: [...DOOR_FINISHES, 'Gray concrete', 'Matte gray', 'Matte cream'],
+  },
+  {
+    t: 'Concealed-Frame Doors', meta: 'Flush installation', img: 'door-col-concealed',
+    d: 'Doors that disappear into the wall: an anodized aluminum frame and a primed surface ready to paint to match any interior.',
+    doors: ['door-concealed-1', 'door-concealed-2'], finishes: ['Paint-ready primed surface', 'Gray or black aluminum edge'],
+  },
+]
+
+export const BM_ADDITIONAL = [
+  { t: 'Kitchen & Custom Cabinetry', d: 'Kitchen cabinets, vanities and storage systems in custom finishes.', imgs: ['materials-kitchen-walnut', 'materials-kitchen-cream', 'materials-kitchen-island', 'materials-kitchen-woodfloor', 'materials-kitchen-marble', 'materials-kitchen-bar'] },
+  { t: 'Garage Doors', d: 'Contemporary garage doors in glass, aluminum and wood-look finishes.', imgs: ['materials-garage-collage', 'materials-garage-dark', 'materials-garage-glass'] },
+  { t: 'Hardwood Flooring', d: 'Wide-plank and engineered hardwood in natural and contemporary finishes.', imgs: ['materials-floor-hardwood', 'materials-floor-lifestyle', 'materials-floor-species', 'materials-floor-closeup'] },
 ]
 
 export const BM_PLATFORM = [
@@ -232,7 +283,7 @@ export const BM_SERVES = [
 
 export const BM_AUDIENCES = [
   { k: 'Developers, Builders & Contractors', d: 'We can evaluate design specifications, product selection, quantities, construction schedules, lead times and delivery requirements for your project.', cta: 'Tell us about your project', topic: 'Building Materials & Distribution', img: 'materials-door-collage' },
-  { k: 'Architects & Designers', d: 'Explore a growing portfolio of kitchen, door, window, flooring and roofing products selected for today’s residential architecture.', cta: 'Explore our products', topic: 'Building Materials & Distribution', img: 'materials-glass-sliding-collage' },
+  { k: 'Architects & Designers', d: 'Explore our roofing, interior and exterior door, and sliding and folding glass door products for residential and commercial architecture.', cta: 'Explore our products', topic: 'Building Materials & Distribution', img: 'materials-glass-sliding-collage' },
   { k: 'International Manufacturers', d: 'If your company manufactures an exceptional construction or architectural product and is seeking opportunities in California or the broader U.S. market, we’d like to hear from you.', cta: 'Introduce your company', topic: 'Manufacturing Partnership', img: 'materials-roof-mediterranean' },
   { k: 'Distribution Partners', d: 'We can evaluate opportunities involving product representation, distribution, project applications, developer relationships and market development.', cta: 'Discuss U.S. distribution', topic: 'Manufacturing Partnership', img: 'materials-garage-collage' },
 ]
