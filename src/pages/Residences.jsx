@@ -2,8 +2,9 @@ import { useRef, useState, useLayoutEffect } from 'react'
 import { gsap } from '../lib/gsap'
 import useReveal from '../lib/useReveal'
 import { PageHero, Media, Eyebrow, CtaBand } from '../components/UI'
-import { IMG, GALLERY } from '../data/site'
+import { GALLERY, imgSrc } from '../data/site'
 import useSEO from '../lib/useSEO'
+import { altFor } from '../data/seo'
 
 const PRINCIPLES = [
   ['Architecture that inspires.', 'estate-summit'],
@@ -15,12 +16,7 @@ const PRINCIPLES = [
 ]
 
 export default function Residences() {
-  useSEO({
-    title: 'Signature Residences',
-    description: 'The art of living well. Explore signature interiors, kitchens, primary suites and outdoor living spaces across the Concord Pacific, Corp. portfolio.',
-    path: '/signature-residences',
-    image: '/images/interior-great-room.webp',
-  })
+  useSEO('/signature-residences')
   const ref = useRef(null)
   const gal = useRef(null)
   const [cat, setCat] = useState('Kitchens')
@@ -64,7 +60,7 @@ export default function Residences() {
         <div className="gal__grid" ref={gal} key={cat}>
           {GALLERY[cat].map((img, i) => (
             <button className={`gal__item gal__item--${i}`} key={img + i} onClick={() => setLightbox(img)} data-cursor="Enlarge">
-              <img src={IMG(img)} alt={`${cat} ${i + 1}`} loading="lazy" />
+              <img {...imgSrc(img, '(max-width: 900px) 50vw, 33vw')} alt={altFor(img)} loading="lazy" />
             </button>
           ))}
         </div>
@@ -72,7 +68,7 @@ export default function Residences() {
 
       {lightbox && (
         <div className="lb" onClick={() => setLightbox(null)} role="dialog" aria-label="Image preview">
-          <img src={IMG(lightbox)} alt="" />
+          <img {...imgSrc(lightbox)} alt={altFor(lightbox)} />
           <button className="lb__close" aria-label="Close">Close</button>
         </div>
       )}

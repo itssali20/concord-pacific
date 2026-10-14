@@ -3,13 +3,14 @@ import { gsap, SplitText, reduceMotion } from '../lib/gsap'
 import { introDone } from '../lib/intro'
 import useReveal from '../lib/useReveal'
 import { TLink } from './Transition'
-import { IMG } from '../data/site'
+import { imgSrc } from '../data/site'
+import { altFor } from '../data/seo'
 
-export function Media({ img, alt = '', reveal = 'up', parallax, className = '', eager, cursor }) {
+export function Media({ img, alt, reveal = 'up', parallax, className = '', eager, cursor, sizes }) {
   return (
     <div className={`media ${className}`} data-img={reveal || undefined} data-cursor={cursor}>
       <div className="media__in" data-parallax={parallax}>
-        <img src={IMG(img)} alt={alt} loading={eager ? 'eager' : 'lazy'} decoding="async" />
+        <img {...imgSrc(img, sizes)} alt={alt ?? altFor(img)} loading={eager ? 'eager' : 'lazy'} decoding="async" />
       </div>
     </div>
   )
@@ -33,7 +34,7 @@ export function VideoMedia({ src, poster, alt = '', reveal = 'up', parallax, cla
   return (
     <div className={`media ${className}`} data-img={reveal || undefined} data-cursor={cursor}>
       <div className="media__in" data-parallax={parallax}>
-        <video ref={el} src={src} poster={poster} muted loop playsInline preload="metadata" aria-label={alt} />
+        <video ref={el} src={src} poster={poster} muted loop playsInline preload="none" aria-label={alt} />
       </div>
     </div>
   )
@@ -63,7 +64,7 @@ export function PageHero({ img, eyebrow, title, sub, align = 'bottom' }) {
     const run = () => {
       ctx = gsap.context(() => {
         const q = gsap.utils.selector(ref)
-        split = SplitText.create(q('.ph__title'), { type: 'lines,words', mask: 'lines' })
+        split = SplitText.create(q('.ph__title'), { type: 'lines,words', mask: 'lines', aria: 'none' })
         if (reduceMotion()) return
         gsap.timeline({ delay: 0.35 })
           .fromTo(q('.ph__media'), { clipPath: 'inset(12% 8% 12% 8%)', scale: 1.15 }, { clipPath: 'inset(0% 0% 0% 0%)', scale: 1, duration: 2, ease: 'expo.inOut' })
@@ -79,7 +80,7 @@ export function PageHero({ img, eyebrow, title, sub, align = 'bottom' }) {
   }, [])
   return (
     <section className={`ph ph--${align}`} ref={ref}>
-      <div className="ph__media"><img src={IMG(img)} alt="" fetchpriority="high" /></div>
+      <div className="ph__media"><img {...imgSrc(img)} alt={altFor(img)} fetchpriority="high" /></div>
       <div className="ph__shade" />
       <div className="ph__content wrap">
         {eyebrow && <p className="eyebrow eyebrow--light ph__fade">{eyebrow}</p>}

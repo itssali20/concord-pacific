@@ -15,7 +15,7 @@ npm run preview    # preview the build
 ## Deploy to Vercel
 1. Push this folder to a GitHub repo (or run `npx vercel` inside it).
 2. In Vercel → **Add New Project** → import the repo. Framework is auto-detected as **Vite** (build `npm run build`, output `dist`).
-3. `vercel.json` already contains the SPA rewrite so deep links like `/developments/the-summit` work on refresh.
+3. Every page is pre-rendered to static HTML at build time (`scripts/prerender.js`), and `vercel.json` serves them with clean URLs and real 404s.
 
 ### Environment variables (optional — Vercel → Settings → Environment Variables)
 | Name | Purpose |
@@ -23,6 +23,10 @@ npm run preview    # preview the build
 | `VITE_FORM_ENDPOINT` | Form POST endpoint (e.g. Formspree `https://formspree.io/f/xxxx`). If empty, forms open the visitor's email app. |
 | `VITE_CONTACT_EMAIL` | Public inquiry email (placeholder: inquiries@concordpacificcorp.com) |
 | `VITE_CONTACT_PHONE` | Public phone number (default: 800-201-0145) |
+| `VITE_SITE_URL` | Live site address, e.g. `https://www.yourdomain.com`. Drives canonical URLs, sitemap, robots.txt and social tags. **Change when moving domains, then redeploy.** |
+| `VITE_GA_ID` | Google Analytics 4 Measurement ID (`G-XXXXXXXXXX`). Empty = no analytics. |
+| `VITE_GSC_VERIFICATION` | Google Search Console HTML-tag verification code (optional if verified by DNS). |
+| `VITE_BING_VERIFICATION` | Bing Webmaster Tools verification code (optional). |
 
 ## Pages
 | Route | Page |
@@ -37,6 +41,12 @@ npm run preview    # preview the build
 | `/company` | Company profile |
 | `/opportunities` | Owners / Brokers / Investors / Joint Ventures + confidential submission form |
 | `/contact` | Contact + inquiry form |
+
+## SEO
+- **All SEO settings live in `src/data/seo.js`:** page titles, meta descriptions, social-share images, image alt text and structured data. New developments in `developments.js` get SEO automatically.
+- `npm run build` produces pre-rendered HTML for every page plus `sitemap.xml`, `robots.txt`, `404.html` and an Apache `.htaccess`.
+- Responsive image copies (640/1280/1920px) are generated into `public/img-sizes` by `scripts/images.js` before dev and build.
+- Other hosts: Netlify works as-is. Nginx needs `try_files $uri $uri.html $uri/ =404; error_page 404 /404.html;`.
 
 ## Editing content
 - **Projects:** `src/data/developments.js` (name, area, status, stats, features, images, copy). A new entry automatically gets its own page.

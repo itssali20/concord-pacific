@@ -5,3 +5,5 @@ dist
 .DS_Store
 .vercel
 video-originals
+.ssr
+public/img-sizes

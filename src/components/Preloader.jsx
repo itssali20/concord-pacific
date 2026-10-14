@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react'
 import { gsap, reduceMotion } from '../lib/gsap'
 import { finishIntro } from '../lib/intro'
 import { lockScroll } from './SmoothScroll'
-import { IMG, HERO_SLIDES } from '../data/site'
+import { imgSrc, HERO_SLIDES } from '../data/site'
 
 const VIDEO_SRC = '/videos/logo-intro.mp4'
 const VIDEO_POSTER = '/videos/logo-intro-poster.jpg'
@@ -26,7 +26,13 @@ export default function Preloader() {
     }
     lockScroll(true)
     // warm the hero images while the loader runs
-    const loads = HERO_SLIDES.map((s) => new Promise((r) => { const i = new Image(); i.onload = i.onerror = r; i.src = IMG(s.img) }))
+    const loads = (window.location.pathname === '/' ? HERO_SLIDES : []).map((s) => new Promise((r) => {
+      const i = new Image()
+      const { srcSet, sizes, src } = imgSrc(s.img)
+      i.onload = i.onerror = r
+      if (srcSet) { i.srcset = srcSet; i.sizes = sizes }
+      i.src = src
+    }))
     const counter = { v: 0 }
     const q = gsap.utils.selector(root)
     const ctx = gsap.context(() => {

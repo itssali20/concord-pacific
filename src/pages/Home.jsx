@@ -5,7 +5,8 @@ import useReveal from '../lib/useReveal'
 import { Media, VideoMedia, Btn, Eyebrow, Marquee, CtaBand } from '../components/UI'
 import { TLink } from '../components/Transition'
 import useSEO from '../lib/useSEO'
-import { IMG, HERO_SLIDES, LOCATIONS, PILLARS, OPP_TYPES, CONTACT, MATERIALS, PROCESS } from '../data/site'
+import { altFor } from '../data/seo'
+import { HERO_SLIDES, LOCATIONS, PILLARS, OPP_TYPES, CONTACT, MATERIALS, PROCESS, imgSrc } from '../data/site'
 import { DEVELOPMENTS } from '../data/developments'
 
 /* ───────────── HERO ───────────── */
@@ -22,7 +23,7 @@ function Hero() {
         const q = gsap.utils.selector(ref)
         const slides = q('.hero__slide')
         const bars = q('.hero__bar i')
-        split = SplitText.create(q('.hero__word'), { type: 'chars', charsClass: 'hc' })
+        split = SplitText.create(q('.hero__word'), { type: 'chars', charsClass: 'hc', aria: 'none' })
         const rm = reduceMotion()
         gsap.set(slides, { autoAlpha: 0 })
         gsap.set(slides[0], { autoAlpha: 1 })
@@ -102,7 +103,7 @@ function Hero() {
         <div className="hero__slides">
         {HERO_SLIDES.map((h, i) => (
           <div className="hero__slide" key={h.img}>
-            <img src={IMG(h.img)} alt={h.note} fetchpriority={i === 0 ? 'high' : 'low'} />
+            <img {...imgSrc(h.img)} alt={h.note} fetchpriority={i === 0 ? 'high' : 'low'} />
           </div>
         ))}
         </div>
@@ -111,9 +112,10 @@ function Hero() {
 
       <div className="hero__content hero__fadeout-wrap">
         <p className="hero__in hero__fadeout eyebrow eyebrow--light">Beverly Hills, California</p>
-        <h1 className="hero__title" aria-label="Concord Pacific">
-          <span className="hero__word hero__word--a">Concord</span>
+        <h1 className="hero__title">
+          <span className="hero__word hero__word--a">Concord</span>{' '}
           <span className="hero__word hero__word--b">Pacific</span>
+          <span className="sr-only"> — Luxury Real Estate Development in Beverly Hills, California</span>
         </h1>
         <span className="hero__rule hero__fadeout" />
         <p className="hero__in hero__fadeout hero__tag">Exceptional Properties. <em>Extraordinary Living.</em></p>
@@ -173,7 +175,7 @@ function Locations() {
         {LOCATIONS.map((l, i) => (
           <TLink to="/developments" key={l.name} className={`loc ${active === i ? 'is-active' : ''}`}
             onMouseEnter={() => setActive(i)} data-cursor="Explore">
-            <div className="loc__media"><img src={IMG(l.img)} alt={l.name} loading="lazy" /></div>
+            <div className="loc__media"><img {...imgSrc(l.img)} alt={l.name} loading="lazy" /></div>
             <div className="loc__shade" />
             <span className="loc__n">0{i + 1}</span>
             <div className="loc__body">
@@ -223,7 +225,7 @@ function Featured() {
           </div>
           {feats.map((d, i) => (
             <TLink to={`/developments/${d.slug}`} className="hz__card" key={d.slug} data-cursor="View">
-              <div className="hz__media"><img src={IMG(d.hero)} alt={d.name} loading="lazy" /></div>
+              <div className="hz__media"><img {...imgSrc(d.hero)} alt={d.name} loading="lazy" /></div>
               <div className="hz__info">
                 <span className="hz__n">0{i + 1}</span>
                 <div>
@@ -290,14 +292,14 @@ function Standard() {
         <div className="std__right">
           <div className="std__imgs">
             {PILLARS.map((p) => (
-              <div className="std__img" key={p.t}><img src={IMG(p.img)} alt={p.t} loading="lazy" /></div>
+              <div className="std__img" key={p.t}><img {...imgSrc(p.img)} alt={p.t} loading="lazy" /></div>
             ))}
             <div className="std__counter"><b>0{step + 1}</b><span>/0{PILLARS.length}</span></div>
           </div>
           <div className="std__descs">
             {PILLARS.map((p) => (
               <div className="std__desc" key={p.t}>
-                <img className="std__mimg" src={IMG(p.img)} alt="" loading="lazy" />
+                <img className="std__mimg" {...imgSrc(p.img)} alt="" loading="lazy" />
                 <h3 className="h3 light">{p.t}</h3>
                 <p>{p.d}</p>
               </div>
@@ -338,7 +340,7 @@ function TeamSection() {
       </div>
       <div className="wrap team__photos tp__grid">
         <figure className="tp__item tp__item--a">
-          <VideoMedia src="/videos/pixverseVid.mp4" reveal="left" />
+          <VideoMedia src="/videos/pixverseVid.mp4" poster="/videos/pixverseVid-poster.jpg" alt="Concord Pacific development team collaborating in the Beverly Hills studio" reveal="left" />
           <figcaption>Planning, design & development — Beverly Hills studio</figcaption>
         </figure>
         <figure className="tp__item tp__item--b"><Media img="team-vision-reality" reveal="up" /><figcaption>From vision to reality</figcaption></figure>
@@ -347,7 +349,7 @@ function TeamSection() {
       </div>
       <div className="wrap">
         <div className="team__drawing">
-          <div className="team__plans"><img src={IMG('plans-floors')} alt="Architectural floor plans" loading="lazy" /></div>
+          <div className="team__plans"><img {...imgSrc('plans-floors')} alt="Architectural floor plans" loading="lazy" /></div>
           <span className="team__scan" />
           <div className="team__labels">
             <span>P2 · Garage</span><span>P1 · Garage</span><span>L1 · Lobby</span><span>L2 · Residences</span><span>L3 · Residences</span><span>Roof · Pool Deck</span>
@@ -391,7 +393,7 @@ function Interiors() {
         {cols.map((c, i) => (
           <div className="int__col" key={i}>
             {c.map((img) => (
-              <div className="int__item" key={img}><img src={IMG(img)} alt="" loading="lazy" /></div>
+              <div className="int__item" key={img}><img {...imgSrc(img)} alt={altFor(img)} loading="lazy" /></div>
             ))}
           </div>
         ))}
@@ -419,7 +421,7 @@ function MaterialsSection() {
       <div className="wrap hm-mat__grid" data-stagger>
         {MATERIALS.map((m, i) => (
           <TLink to="/design-and-materials" key={m.id} className={`hm-mat__card hm-mat__card--${i}`} data-cursor="Explore">
-            <div className="hm-mat__img"><img src={IMG(m.img)} alt={m.t} loading="lazy" /></div>
+            <div className="hm-mat__img"><img {...imgSrc(m.img)} alt={m.t} loading="lazy" /></div>
             <div className="hm-mat__shade" />
             <div className="hm-mat__txt">
               <span>{String(i + 1).padStart(2, '0')}</span>
@@ -446,7 +448,7 @@ function Film() {
       </div>
       <div className="wrap film__grid">
         <figure className="film__item film__item--full">
-          <VideoMedia src="/videos/Fullvideo.mp4" alt="Concord Pacific — a cinematic tour of our residences" reveal="up" />
+          <VideoMedia src="/videos/Fullvideo.mp4" poster="/videos/Fullvideo-poster.jpg" alt="Concord Pacific — a cinematic tour of our residences" reveal="up" />
           <figcaption data-fade>
             <span>Film</span>
             <h3>The Concord Pacific experience.</h3>
@@ -503,7 +505,7 @@ function Construction() {
     <section className="con" ref={ref}>
       <div className="con__pin">
         <div className="con__frame">
-          {PROCESS.map((p) => <div className="con__img" key={p.k}><img src={IMG(p.img)} alt={p.k} loading="lazy" /></div>)}
+          {PROCESS.map((p) => <div className="con__img" key={p.k}><img {...imgSrc(p.img)} alt={p.k} loading="lazy" /></div>)}
           <div className="con__shade" />
         </div>
         <div className="con__content wrap">
@@ -515,7 +517,7 @@ function Construction() {
           <div className="con__steps">
             {PROCESS.map((p, i) => (
               <div className={`con__step ${step === i ? 'is-on' : ''}`} key={p.k}>
-                <img className="con__mimg" src={IMG(p.img)} alt="" loading="lazy" />
+                <img className="con__mimg" {...imgSrc(p.img)} alt="" loading="lazy" />
                 <span>0{i + 1}</span>
                 <h3>{p.k}</h3>
                 <p>{p.d}</p>
@@ -544,7 +546,7 @@ function California() {
   return (
     <section className="cal" ref={ref}>
       <p className="cal__pre display"><span>Indoor / Outdoor</span><em>California living</em></p>
-      <div className="cal__media"><img src={IMG('estate-horizon')} alt="Indoor-outdoor California residence" loading="lazy" /></div>
+      <div className="cal__media"><img {...imgSrc('estate-horizon')} alt="Indoor-outdoor California residence" loading="lazy" /></div>
       <div className="cal__shade" />
       <div className="cal__text wrap">
         <p className="eyebrow eyebrow--light"><span className="eyebrow__n">09</span>Indoor / Outdoor</p>
@@ -616,7 +618,7 @@ function Opps() {
         ))}
       </ul>
       <div className={`opps__follow ${hover >= 0 ? 'is-on' : ''}`} ref={follow} aria-hidden="true">
-        {imgs.map((im, i) => <img key={im} src={IMG(im)} alt="" className={hover === i ? 'is-on' : ''} loading="lazy" />)}
+        {imgs.map((im, i) => <img key={im} {...imgSrc(im)} alt="" className={hover === i ? 'is-on' : ''} loading="lazy" />)}
       </div>
       <div className="wrap opps__cta" data-fade>
         <Btn to="/opportunities" variant="btn--dark">Submit an opportunity</Btn>
@@ -627,11 +629,7 @@ function Opps() {
 }
 
 export default function Home() {
-  useSEO({
-    description: 'Concord Pacific, Corp. is a Beverly Hills real estate development company creating exceptional private estates and luxury condominium residences in Beverly Hills, Bel-Air and Greater Los Angeles.',
-    path: '/',
-    image: '/images/estate-pool-sunset.webp',
-  })
+  useSEO('/')
   useLayoutEffect(() => { const t = setTimeout(() => { ScrollTrigger.sort(); ScrollTrigger.refresh() }, 800); return () => clearTimeout(t) }, [])
   return (
     <div>

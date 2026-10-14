@@ -13,12 +13,7 @@ const POINTS = [
 ]
 
 export default function Company() {
-  useSEO({
-    title: 'Company',
-    description: 'Concord Pacific, Corp. is headquartered in Beverly Hills, California, developing exceptional private estates and condominium residences across Beverly Hills, Bel-Air and Greater Los Angeles.',
-    path: '/company',
-    image: '/images/loc-beverly-hills-entry.webp',
-  })
+  useSEO('/company')
   const ref = useRef(null)
   useReveal(ref)
   return (

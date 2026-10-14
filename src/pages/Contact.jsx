@@ -6,12 +6,7 @@ import { CONTACT, INQUIRY_TYPES } from '../data/site'
 import useSEO from '../lib/useSEO'
 
 export default function Contact() {
-  useSEO({
-    title: 'Contact',
-    description: `Contact Concord Pacific, Corp. in Beverly Hills, California. ${CONTACT.email} | ${CONTACT.phone}. All inquiries are handled in strict confidence.`,
-    path: '/contact',
-    image: '/images/estate-pool-tall.webp',
-  })
+  useSEO('/contact')
   const ref = useRef(null)
   const [type, setType] = useState(INQUIRY_TYPES[0])
   useReveal(ref)

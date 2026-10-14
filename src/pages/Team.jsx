@@ -2,18 +2,13 @@ import { useRef, useState } from 'react'
 import { gsap } from '../lib/gsap'
 import useReveal from '../lib/useReveal'
 import { PageHero, Media, VideoMedia, Eyebrow, Marquee, CtaBand, Btn } from '../components/UI'
-import { DISCIPLINES, CEO, PROCESS, IMG } from '../data/site'
+import { DISCIPLINES, CEO, PROCESS, imgSrc } from '../data/site'
 import useSEO from '../lib/useSEO'
 
 const IMGS = ['estate-heritage', 'construction-site', 'construction-team-tall', 'interior-great-room', 'estate-fire-terrace', 'construction-plans', 'interior-theater']
 
 export default function Team() {
-  useSEO({
-    title: 'International Team',
-    description: 'International talent, one vision. Meet the architects, engineers, interior designers and builders behind Concord Pacific, Corp.',
-    path: '/international-team',
-    image: '/images/construction-team.webp',
-  })
+  useSEO('/international-team')
   const ref = useRef(null)
   const [open, setOpen] = useState(0)
   useReveal(ref, (q, rm) => {
@@ -38,8 +33,8 @@ export default function Team() {
       <section className="ceo">
         <div className="wrap ceo__grid">
           <div className="ceo__media">
-            <div className="ceo__frame" data-img="up"><img src={IMG('team-ceo-model')} alt="Roman Alexander, CEO, reviewing a residence model with the design team" loading="lazy" /></div>
-            <div className="ceo__frame ceo__frame--sm" data-img="left"><img src={IMG('team-ceo-portrait')} alt="Roman Alexander, CEO of Concord Pacific, Corp." loading="lazy" /></div>
+            <div className="ceo__frame" data-img="up"><img {...imgSrc('team-ceo-model')} alt="Roman Alexander, CEO, reviewing a residence model with the design team" loading="lazy" /></div>
+            <div className="ceo__frame ceo__frame--sm" data-img="left"><img {...imgSrc('team-ceo-portrait')} alt="Roman Alexander, CEO of Concord Pacific, Corp." loading="lazy" /></div>
           </div>
           <div className="ceo__txt">
             <Eyebrow n="02" light>Leadership</Eyebrow>
@@ -59,7 +54,7 @@ export default function Team() {
         </div>
         <div className="tp__grid">
           <figure className="tp__item tp__item--a">
-            <VideoMedia src="/videos/pixverseVid.mp4" reveal="left" />
+            <VideoMedia src="/videos/pixverseVid.mp4" poster="/videos/pixverseVid-poster.jpg" alt="Concord Pacific development team collaborating in the Beverly Hills studio" reveal="left" />
             <figcaption>Planning, design & development — Beverly Hills studio</figcaption>
           </figure>
           <figure className="tp__item tp__item--b"><Media img="team-vision-reality" reveal="up" /><figcaption>From vision to reality</figcaption></figure>
@@ -93,7 +88,7 @@ export default function Team() {
           </div>
           <div className="tm__visual">
             {IMGS.map((im, i) => (
-              <img key={im} src={IMG(im)} alt="" className={open === i ? 'is-on' : ''} loading="lazy" />
+              <img key={im} {...imgSrc(im)} alt="" className={open === i ? 'is-on' : ''} loading="lazy" />
             ))}
           </div>
         </div>
@@ -107,7 +102,7 @@ export default function Team() {
           <div className="proc__grid" data-stagger>
             {PROCESS.map((p, i) => (
               <article className="proc__card" key={p.k}>
-                <div className="proc__img"><img src={IMG(p.img)} alt={p.k} loading="lazy" /></div>
+                <div className="proc__img"><img {...imgSrc(p.img, '(max-width: 900px) 50vw, 25vw')} alt={p.k} loading="lazy" /></div>
                 <span>0{i + 1}</span>
                 <h3>{p.k}</h3>
                 <p>{p.d}</p>

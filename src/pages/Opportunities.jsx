@@ -2,16 +2,12 @@ import { useRef, useState } from 'react'
 import useReveal from '../lib/useReveal'
 import { PageHero, Eyebrow } from '../components/UI'
 import InquiryForm from '../components/InquiryForm'
-import { IMG, OPPORTUNITIES, OPP_TYPES } from '../data/site'
+import { OPPORTUNITIES, OPP_TYPES, imgSrc } from '../data/site'
 import useSEO from '../lib/useSEO'
+import { altFor } from '../data/seo'
 
 export default function Opportunities() {
-  useSEO({
-    title: 'Development Opportunities',
-    description: 'A discreet acquisition and business-development practice for property owners, brokers, investors and joint-venture partners.',
-    path: '/opportunities',
-    image: '/images/estate-summit.webp',
-  })
+  useSEO('/opportunities')
   const ref = useRef(null)
   const [topic, setTopic] = useState('Development Opportunities')
   const formRef = useRef(null)
@@ -27,7 +23,7 @@ export default function Opportunities() {
       <section className="wrap op">
         {OPPORTUNITIES.map((o, i) => (
           <article className="op__card" key={o.k} data-fade={i * 0.08}>
-            <div className="op__img"><img src={IMG(o.img)} alt="" loading="lazy" /></div>
+            <div className="op__img"><img {...imgSrc(o.img, '(max-width: 900px) 100vw, 50vw')} alt={altFor(o.img)} loading="lazy" /></div>
             <div className="op__body">
               <span className="op__n">{String(i + 1).padStart(2, '0')}</span>
               <h2 className="h2">{o.k}</h2>

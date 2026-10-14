@@ -3,16 +3,12 @@ import { gsap, ScrollTrigger } from '../lib/gsap'
 import useReveal from '../lib/useReveal'
 import { PageHero, Media, Eyebrow, CtaBand, Marquee, Btn } from '../components/UI'
 import InquiryForm from '../components/InquiryForm'
-import { IMG, BM_PRODUCTS, BM_PLATFORM, BM_PRIORITIES, BM_SERVES, BM_AUDIENCES } from '../data/site'
+import { BM_PRODUCTS, BM_PLATFORM, BM_PRIORITIES, BM_SERVES, BM_AUDIENCES, imgSrc } from '../data/site'
 import useSEO from '../lib/useSEO'
+import { altFor } from '../data/seo'
 
 export default function BuildingMaterials() {
-  useSEO({
-    title: 'Building Materials & Distribution',
-    description: 'Concord Pacific Corp. sources and distributes exceptional building materials and architectural products — kitchens, doors, windows, flooring and roofing — throughout California and the United States.',
-    path: '/building-materials',
-    image: '/images/materials-door-collage.webp',
-  })
+  useSEO('/building-materials')
   const ref = useRef(null)
   const [active, setActive] = useState(0)
   const formRef = useRef(null)
@@ -64,7 +60,7 @@ export default function BuildingMaterials() {
         <div className="mt-index" data-stagger>
           {BM_PRODUCTS.map((m, i) => (
             <button key={m.id} className="mt-index__item" onClick={() => go(i)} data-cursor="View">
-              <span className="mt-index__img"><img src={IMG(m.img)} alt="" loading="lazy" /></span>
+              <span className="mt-index__img"><img {...imgSrc(m.img, '(max-width: 900px) 50vw, 25vw')} alt="" loading="lazy" /></span>
               <span className="mt-index__n">{String(i + 1).padStart(2, '0')}</span>
               <span className="mt-index__t">{m.t}</span>
             </button>
@@ -96,7 +92,7 @@ export default function BuildingMaterials() {
                 </ul>
                 {m.gallery && (
                   <div className="mt__gallery">
-                    {m.gallery.map((im) => <img key={im} src={IMG(im)} alt="" loading="lazy" />)}
+                    {m.gallery.map((im) => <img key={im} {...imgSrc(im, '(max-width: 900px) 50vw, 20vw')} alt={altFor(im)} loading="lazy" />)}
                   </div>
                 )}
               </div>
@@ -122,7 +118,7 @@ export default function BuildingMaterials() {
       <section className="wrap op">
         {BM_AUDIENCES.map((o, i) => (
           <article className="op__card" key={o.k} data-fade={i * 0.08}>
-            <div className="op__img"><img src={IMG(o.img)} alt="" loading="lazy" /></div>
+            <div className="op__img"><img {...imgSrc(o.img, '(max-width: 900px) 100vw, 50vw')} alt={altFor(o.img)} loading="lazy" /></div>
             <div className="op__body">
               <span className="op__n">{String(i + 1).padStart(2, '0')}</span>
               <h2 className="h2">{o.k}</h2>
@@ -162,7 +158,7 @@ export default function BuildingMaterials() {
           <div className="proc__grid" data-stagger>
             {BM_PLATFORM.map((p, i) => (
               <article className="proc__card" key={p.k}>
-                <div className="proc__img"><img src={IMG(p.img)} alt={p.k} loading="lazy" /></div>
+                <div className="proc__img"><img {...imgSrc(p.img, '(max-width: 900px) 50vw, 25vw')} alt={p.k} loading="lazy" /></div>
                 <span>0{i + 1}</span>
                 <h3>{p.k}</h3>
                 <p>{p.d}</p>

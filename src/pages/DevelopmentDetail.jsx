@@ -6,9 +6,10 @@ import { PageHero, Media, Eyebrow, Btn } from '../components/UI'
 import { TLink } from '../components/Transition'
 import InquiryForm from '../components/InquiryForm'
 import NotFound from './NotFound'
-import { IMG } from '../data/site'
+import { imgSrc } from '../data/site'
 import { DEVELOPMENTS, getDev } from '../data/developments'
-import useSEO, { SITE } from '../lib/useSEO'
+import useSEO from '../lib/useSEO'
+import { altFor } from '../data/seo'
 
 const SECTIONS = ['Vision', 'Architecture', 'Residences', 'Interiors', 'Details', 'Location', 'Team', 'Inquiries']
 
@@ -39,21 +40,7 @@ export default function DevelopmentDetail() {
   }, [slug])
 
   useEffect(() => { setActive(0) }, [slug])
-  useSEO(d ? {
-    title: d.name,
-    description: `${d.tagline} ${d.vision}`.trim(),
-    path: `/developments/${d.slug}`,
-    image: IMG(d.hero),
-    jsonLd: {
-      '@context': 'https://schema.org',
-      '@type': 'Residence',
-      name: d.name,
-      description: d.vision,
-      url: `${SITE}/developments/${d.slug}`,
-      image: `${SITE}${IMG(d.hero)}`,
-      address: { '@type': 'PostalAddress', addressLocality: d.area, addressRegion: 'CA', addressCountry: 'US' },
-    },
-  } : { noindex: true, title: 'Not Found', path: `/developments/${slug}` })
+  useSEO(`/developments/${slug}`)
   if (!d) return <NotFound />
 
   const idx = DEVELOPMENTS.indexOf(d)
@@ -112,7 +99,7 @@ export default function DevelopmentDetail() {
             <h3 className="h3" data-split>Kitchens, baths, millwork, materials and finishes — <em>selected without compromise.</em></h3>
             <div className="pd__strip"><div className="pd__strip-track">
               {[...d.gallery.slice(1), ...d.gallery.slice(1)].map((g, i) => (
-                <div className="pd__strip-item" key={i}><img src={IMG(g)} alt="" loading="lazy" /></div>
+                <div className="pd__strip-item" key={i}><img {...imgSrc(g, '(max-width: 900px) 80vw, 40vw')} alt={altFor(g)} loading="lazy" /></div>
               ))}
             </div></div>
           </section>
@@ -153,7 +140,7 @@ export default function DevelopmentDetail() {
       </div>
 
       <TLink to={`/developments/${next.slug}`} className="pd__next" data-cursor="Next">
-        <img src={IMG(next.hero)} alt="" loading="lazy" />
+        <img {...imgSrc(next.hero)} alt="" loading="lazy" />
         <div className="pd__next-in wrap">
           <span className="eyebrow eyebrow--light">Next development</span>
           <span className="h1 light">{next.name}</span>

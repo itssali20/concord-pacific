@@ -1,4 +1,15 @@
+import WIDTHS from './image-widths.json'
+
 export const IMG = (n) => `/images/${n}.webp`
+
+const STEPS = [640, 1280, 1920]
+/** <img> props with a srcset of the resized copies made by scripts/images.js, so small screens get small files. */
+export const imgSrc = (n, sizes = '100vw') => {
+  const w = WIDTHS[n]
+  const steps = w ? STEPS.filter((s) => s < w) : []
+  if (!steps.length) return { src: IMG(n) }
+  return { srcSet: [...steps.map((s) => `/img-sizes/${s}/${n}.webp ${s}w`), `${IMG(n)} ${w}w`].join(', '), sizes, src: IMG(n) }
+}
 
 export const CONTACT = {
   email: import.meta.env.VITE_CONTACT_EMAIL || '1000pacific@gmail.com',

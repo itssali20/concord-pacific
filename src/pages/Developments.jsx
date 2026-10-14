@@ -3,17 +3,12 @@ import { gsap, ScrollTrigger } from '../lib/gsap'
 import useReveal from '../lib/useReveal'
 import { PageHero, Eyebrow, CtaBand } from '../components/UI'
 import { TLink } from '../components/Transition'
-import { IMG } from '../data/site'
+import { imgSrc } from '../data/site'
 import { DEVELOPMENTS, FILTERS, STATUSES } from '../data/developments'
 import useSEO from '../lib/useSEO'
 
 export default function Developments() {
-  useSEO({
-    title: 'Developments',
-    description: 'Private estates and condominium residences across Beverly Hills, Bel-Air and Greater Los Angeles. Explore the Concord Pacific, Corp. development portfolio.',
-    path: '/developments',
-    image: '/images/estate-heritage.webp',
-  })
+  useSEO('/developments')
   const ref = useRef(null)
   const grid = useRef(null)
   const [filter, setFilter] = useState('All')
@@ -51,7 +46,7 @@ export default function Developments() {
         <div className="devs__grid" ref={grid}>
           {list.map((d, i) => (
             <TLink to={`/developments/${d.slug}`} key={d.slug} className={`dv ${i % 5 === 0 ? 'dv--wide' : ''}`} data-cursor="View">
-              <div className="dv__media"><img src={IMG(d.cover)} alt={d.name} loading="lazy" /></div>
+              <div className="dv__media"><img {...imgSrc(d.cover, '(max-width: 900px) 100vw, 50vw')} alt={d.name} loading="lazy" /></div>
               <div className="dv__meta">
                 <span className={`pill pill--${d.status.replace(/\s/g, '').toLowerCase()}`}>{d.status}</span>
                 <span className="eyebrow">{d.area} · {d.type}</span>

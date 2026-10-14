@@ -1,11 +1,7 @@
 import { useLayoutEffect } from 'react'
-
-const SITE = 'https://concord-pacific-final.vercel.app'
-const SITE_NAME = 'Concord Pacific, Corp.'
-const DEFAULT_IMAGE = `${SITE}/images/estate-grand.webp`
+import { SITE_URL, SITE_NAME, seoFor, jsonLdFor, imageUrl, altFor } from '../data/seo'
 
 function setMeta(attr, key, content) {
-  if (!content) return
   let el = document.head.querySelector(`meta[${attr}="${key}"]`)
   if (!el) {
     el = document.createElement('meta')
@@ -25,49 +21,41 @@ function setLink(rel, href) {
   el.setAttribute('href', href)
 }
 
-function setJsonLd(id, data) {
-  let el = document.getElementById(id)
-  if (!el) {
-    el = document.createElement('script')
-    el.type = 'application/ld+json'
-    el.id = id
-    document.head.appendChild(el)
-  }
-  el.textContent = JSON.stringify(data)
-}
-
-/**
- * Sets per-page title, meta description, canonical URL, Open Graph and
- * Twitter Card tags. Call once per route with plain strings (no JSX).
- */
-export default function useSEO({ title, description, path = '', image, noindex, jsonLd }) {
+/** Applies the page's title, description, canonical, social tags and structured data from src/data/seo.js. */
+export default function useSEO(path) {
   useLayoutEffect(() => {
-    const fullTitle = title ? `${title} — ${SITE_NAME}` : `${SITE_NAME} — Exceptional Properties. Extraordinary Living.`
-    const url = `${SITE}${path}`
-    const img = image ? `${SITE}${image}` : DEFAULT_IMAGE
+    const s = seoFor(path)
+    const url = `${SITE_URL}${s.path === '/' ? '/' : s.path}`
+    const img = imageUrl(s.image)
 
-    document.title = fullTitle
-    setMeta('name', 'description', description)
-    setLink('canonical', url)
+    document.title = s.title
+    setMeta('name', 'description', s.description)
+    setMeta('name', 'robots', s.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large')
+    if (s.noindex) document.head.querySelector('link[rel="canonical"]')?.remove()
+    else setLink('canonical', url)
 
     setMeta('property', 'og:type', 'website')
     setMeta('property', 'og:site_name', SITE_NAME)
-    setMeta('property', 'og:title', fullTitle)
-    setMeta('property', 'og:description', description)
+    setMeta('property', 'og:locale', 'en_US')
+    setMeta('property', 'og:title', s.title)
+    setMeta('property', 'og:description', s.description)
     setMeta('property', 'og:url', url)
     setMeta('property', 'og:image', img)
+    setMeta('property', 'og:image:alt', altFor(s.image))
 
     setMeta('name', 'twitter:card', 'summary_large_image')
-    setMeta('name', 'twitter:title', fullTitle)
-    setMeta('name', 'twitter:description', description)
+    setMeta('name', 'twitter:title', s.title)
+    setMeta('name', 'twitter:description', s.description)
     setMeta('name', 'twitter:image', img)
+    setMeta('name', 'twitter:image:alt', altFor(s.image))
 
-    setMeta('name', 'robots', noindex ? 'noindex, nofollow' : 'index, follow')
-
-    const ldId = 'ld-page'
-    if (jsonLd) setJsonLd(ldId, jsonLd)
-    else { const el = document.getElementById(ldId); if (el) el.remove() }
-  }, [title, description, path, image, noindex, jsonLd])
+    let ld = document.getElementById('ld-json')
+    if (!ld) {
+      ld = document.createElement('script')
+      ld.type = 'application/ld+json'
+      ld.id = 'ld-json'
+      document.head.appendChild(ld)
+    }
+    ld.textContent = JSON.stringify(jsonLdFor(path))
+  }, [path])
 }
-
-export { SITE, SITE_NAME }

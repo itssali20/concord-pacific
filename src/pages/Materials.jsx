@@ -2,16 +2,12 @@ import { useRef, useState } from 'react'
 import { gsap, ScrollTrigger } from '../lib/gsap'
 import useReveal from '../lib/useReveal'
 import { PageHero, Media, Eyebrow, CtaBand, Marquee } from '../components/UI'
-import { IMG, MATERIALS } from '../data/site'
+import { MATERIALS, imgSrc } from '../data/site'
 import useSEO from '../lib/useSEO'
+import { altFor } from '../data/seo'
 
 export default function Materials() {
-  useSEO({
-    title: 'Design & Materials',
-    description: 'Kitchens, bathrooms, windows, natural stone, millwork and landscape — the craft behind every Concord Pacific, Corp. residence.',
-    path: '/design-and-materials',
-    image: '/images/interior-great-room.webp',
-  })
+  useSEO('/design-and-materials')
   const ref = useRef(null)
   const [active, setActive] = useState(0)
 
@@ -44,7 +40,7 @@ export default function Materials() {
         <div className="mt-index" data-stagger>
           {MATERIALS.map((m, i) => (
             <button key={m.id} className="mt-index__item" onClick={() => go(i)} data-cursor="View">
-              <span className="mt-index__img"><img src={IMG(m.img)} alt="" loading="lazy" /></span>
+              <span className="mt-index__img"><img {...imgSrc(m.img, '(max-width: 900px) 50vw, 25vw')} alt="" loading="lazy" /></span>
               <span className="mt-index__n">{String(i + 1).padStart(2, '0')}</span>
               <span className="mt-index__t">{m.t}</span>
             </button>
@@ -67,7 +63,7 @@ export default function Materials() {
             <section className={`mt__sec ${i % 2 ? 'is-rev' : ''}`} id={m.id} key={m.id}>
               <div className="mt__media">
                 <div style={m.ratio ? { aspectRatio: m.ratio } : undefined} className="mt__mainwrap"><Media img={m.img} parallax={m.ratio ? undefined : '8'} reveal={i % 2 ? 'right' : 'left'} className="mt__main" /></div>
-                <div className="mt__alt"><img src={IMG(m.alt)} alt="" loading="lazy" /></div>
+                <div className="mt__alt"><img {...imgSrc(m.alt)} alt={altFor(m.alt)} loading="lazy" /></div>
               </div>
               <div className="mt__txt">
                 <span className="mt__n">{String(i + 1).padStart(2, '0')}</span>
@@ -79,7 +75,7 @@ export default function Materials() {
                 </ul>
                 {m.gallery && (
                   <div className="mt__gallery">
-                    {m.gallery.map((im) => <img key={im} src={IMG(im)} alt="" loading="lazy" />)}
+                    {m.gallery.map((im) => <img key={im} {...imgSrc(im, '(max-width: 900px) 50vw, 20vw')} alt={altFor(im)} loading="lazy" />)}
                   </div>
                 )}
               </div>

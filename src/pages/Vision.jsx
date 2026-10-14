@@ -2,16 +2,12 @@ import { useRef } from 'react'
 import { gsap } from '../lib/gsap'
 import useReveal from '../lib/useReveal'
 import { PageHero, Eyebrow, CtaBand } from '../components/UI'
-import { IMG, VISION } from '../data/site'
+import { VISION, imgSrc } from '../data/site'
 import useSEO from '../lib/useSEO'
+import { altFor } from '../data/seo'
 
 export default function Vision() {
-  useSEO({
-    title: 'Our Vision',
-    description: 'Vision creates value. The principles behind Concord Pacific, Corp. — exceptional locations, architectural integrity, uncompromising quality and enduring value.',
-    path: '/our-vision',
-    image: '/images/estate-viewpoint.webp',
-  })
+  useSEO('/our-vision')
   const ref = useRef(null)
   useReveal(ref, (q, rm) => {
     const mm = gsap.matchMedia()
@@ -38,7 +34,7 @@ export default function Vision() {
       <section className="vstack wrap">
         {VISION.map((v, i) => (
           <article className="vc" key={v.t}>
-            <div className="vc__img"><img src={IMG(v.img)} alt="" loading="lazy" /></div>
+            <div className="vc__img"><img {...imgSrc(v.img)} alt={altFor(v.img)} loading="lazy" /></div>
             <div className="vc__body">
               <span className="vc__n">{String(i + 1).padStart(2, '0')} / 06</span>
               <h2 className="h1">{v.t}</h2>

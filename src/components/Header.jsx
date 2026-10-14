@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { gsap, ScrollTrigger } from '../lib/gsap'
 import { TLink } from './Transition'
-import { NAV, CONTACT, IMG } from '../data/site'
+import { NAV, CONTACT, IMG, imgSrc } from '../data/site'
 import { lockScroll } from './SmoothScroll'
 
 export function Wordmark({ small }) {
@@ -78,7 +78,7 @@ export default function Header() {
 
       <div className="menu" ref={menu} aria-hidden={!open}>
         <div className="menu__media">
-          <img src={IMG(hoverImg)} alt="" />
+          <img {...imgSrc(hoverImg, '50vw')} alt="" />
         </div>
         <nav className="menu__nav">
           {NAV.map((n, i) => (

@@ -27,7 +27,7 @@ export default function useReveal(scope, extra, deps = []) {
         const rm = reduceMotion()
 
         q('[data-split]').forEach((el) => {
-          const s = SplitText.create(el, { type: 'lines', mask: 'lines', linesClass: 'sl' })
+          const s = SplitText.create(el, { type: 'lines', mask: 'lines', linesClass: 'sl', aria: 'none' })
           splits.push(s)
           if (rm) return
           gsap.from(s.lines, {
@@ -38,7 +38,7 @@ export default function useReveal(scope, extra, deps = []) {
         })
 
         q('[data-words]').forEach((el) => {
-          const s = SplitText.create(el, { type: 'words', wordsClass: 'sw' })
+          const s = SplitText.create(el, { type: 'words', wordsClass: 'sw', aria: 'none' })
           splits.push(s)
           if (rm) return
           gsap.fromTo(s.words, { opacity: 0.14 }, {
