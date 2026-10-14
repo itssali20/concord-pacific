@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://concord-pacific-final.vercel.app/sitemap.xml
