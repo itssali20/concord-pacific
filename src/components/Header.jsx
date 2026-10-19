@@ -10,7 +10,7 @@ export function Wordmark({ small }) {
     <img
       className={`wordmark ${small ? 'wordmark--sm' : ''}`}
       src={IMG('logo-header')}
-      alt="Concord Pacific, Corp."
+      alt="Master Craft International, a division of Concord Pacific, Corp."
     />
   )
 }

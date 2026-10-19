@@ -63,7 +63,7 @@ export default function Preloader() {
     <div className="pl" ref={root} role="status" aria-label="Loading">
       <div className="pl__cols">{[0, 1, 2, 3, 4].map((i) => <div className="pl__col" key={i} />)}</div>
       <div className="pl__inner">
-        <img className="pl__video pl__logo" src={IMG('logo-full')} alt="Concord Pacific Corp. — Building a Stronger Tomorrow" fetchpriority="high" />
+        <img className="pl__video pl__logo" src={IMG('logo-full')} alt="Master Craft International — a division of Concord Pacific Corp." fetchpriority="high" />
         {!rm && (
           <div className="pl__foot">
             <span className="pl__count">000</span>

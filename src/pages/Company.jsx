@@ -20,7 +20,7 @@ export default function Company() {
     <div ref={ref}>
       <PageHero img="loc-beverly-hills-entry" eyebrow="Beverly Hills, California" title={<>Concord Pacific, <em>Corp.</em></>} />
       <section className="wrap co">
-        <div className="co__logo" data-img="center"><img src={IMG('logo-full')} alt="Concord Pacific Corp. logo" /></div>
+        <div className="co__logo" data-img="center"><img src={IMG('logo-full')} alt="Master Craft International logo — a division of Concord Pacific Corp." /></div>
         <div className="co__txt">
           <Eyebrow n="01">The Company</Eyebrow>
           <p className="intro__statement" data-words>Concord Pacific, Corp. is a privately held real estate development company specializing in exceptional luxury residential properties.</p>
