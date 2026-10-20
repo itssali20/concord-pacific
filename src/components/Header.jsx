@@ -10,7 +10,7 @@ export function Wordmark({ small }) {
     <img
       className={`wordmark ${small ? 'wordmark--sm' : ''}`}
       src={IMG('logo-header')}
-      alt="Master Craft International, a division of Concord Pacific, Corp."
+      alt="Master Craft International, a division of Concord Pacific Corp."
     />
   )
 }
@@ -59,7 +59,7 @@ export default function Header() {
   return (
     <>
       <header className={`hdr ${solid ? 'is-solid' : ''} ${hidden && !open ? 'is-hidden' : ''} ${open ? 'is-open' : ''}`}>
-        <TLink to="/" className="hdr__logo" aria-label="Concord Pacific, Corp. home"><Wordmark /></TLink>
+        <TLink to="/" className="hdr__logo" aria-label="Master Craft International home"><Wordmark /></TLink>
         <nav className="hdr__nav" aria-label="Primary">
           {NAV.filter((n) => ['/developments', '/signature-residences', '/design-and-materials', '/international-team', '/our-vision'].includes(n.to)).map((n) => (
             <TLink key={n.to} to={n.to} className={`hdr__link ${pathname.startsWith(n.to) ? 'is-active' : ''}`} data-hover>
@@ -91,7 +91,7 @@ export default function Header() {
         </nav>
         <aside className="menu__aside">
           <p className="eyebrow">Headquarters</p>
-          <p>Concord Pacific, Corp.<br />{CONTACT.city}</p>
+          <p>Master Craft International<br />A division of Concord Pacific Corp.<br />{CONTACT.city}</p>
           <p className="eyebrow">Inquiries</p>
           <p><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a><br /><a href={`tel:${CONTACT.phone.replace(/[^+\d]/g, '')}`}>{CONTACT.phone}</a></p>
           <p className="menu__tag">Exceptional Properties.<br /><em>Extraordinary Living.</em></p>

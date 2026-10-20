@@ -18,12 +18,12 @@ export default function Company() {
   useReveal(ref)
   return (
     <div ref={ref}>
-      <PageHero img="loc-beverly-hills-entry" eyebrow="Beverly Hills, California" title={<>Concord Pacific, <em>Corp.</em></>} />
+      <PageHero img="loc-beverly-hills-entry" eyebrow="Beverly Hills, California" title={<>Master Craft <em>International</em></>} sub="A division of Concord Pacific Corp." />
       <section className="wrap co">
         <div className="co__logo" data-img="center"><img src={IMG('logo-full')} alt="Master Craft International logo — a division of Concord Pacific Corp." /></div>
         <div className="co__txt">
           <Eyebrow n="01">The Company</Eyebrow>
-          <p className="intro__statement" data-words>Concord Pacific, Corp. is a privately held real estate development company specializing in exceptional luxury residential properties.</p>
+          <p className="intro__statement" data-words>Master Craft International, a division of Concord Pacific Corp., is a privately held real estate development company specializing in exceptional luxury residential properties.</p>
           <p className="lead" data-fade>Based in Beverly Hills, California, the company focuses on select opportunities where architecture, location and development expertise can create extraordinary value.</p>
           <p data-fade>Our developments range from exceptional private estates to sophisticated condominium residences. We work with talented architects, engineers, designers, consultants and construction professionals from the United States and internationally.</p>
         </div>

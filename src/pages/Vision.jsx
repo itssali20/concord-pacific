@@ -28,7 +28,7 @@ export default function Vision() {
       <PageHero img="estate-viewpoint" eyebrow="Our Vision" title={<>Vision creates <em>value.</em></>} />
       <section className="wrap vis-intro">
         <Eyebrow n="01">Philosophy</Eyebrow>
-        <p className="intro__statement" data-words>Concord Pacific believes extraordinary development begins long before construction. It begins by recognizing possibilities others may not see.</p>
+        <p className="intro__statement" data-words>Master Craft International, a division of Concord Pacific Corp., believes extraordinary development begins long before construction. It begins by recognizing possibilities others may not see.</p>
         <p className="lead vis-intro__p" data-fade>We study each property’s location, architecture, environment and market potential before developing a singular vision for what that property can become.</p>
       </section>
       <section className="vstack wrap">

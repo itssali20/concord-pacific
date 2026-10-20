@@ -155,7 +155,7 @@ export const CEO = {
   name: 'Roman Alexander',
   role: 'Chief Executive Officer',
   bio: [
-    'Roman Alexander provides the entrepreneurial vision and development leadership behind Concord Pacific, Corp.',
+    'Roman Alexander provides the entrepreneurial vision and development leadership behind Master Craft International, a division of Concord Pacific Corp.',
     'Working closely with the company’s architects, designers, engineers and development professionals, he is involved in shaping the overall vision for each property — from identifying its potential to defining the architecture, design direction and ultimate residential experience.',
   ],
 }

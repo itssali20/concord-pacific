@@ -67,10 +67,10 @@ export default function BuildingMaterials() {
 
       <section className="wrap tm-intro">
         <Eyebrow n="01">Building Materials &amp; Architectural Products Distribution</Eyebrow>
-        <p className="intro__statement" data-words>Concord Pacific Corp. distributes a diverse selection of quality building materials and architectural products for residential and commercial construction, remodeling, and development projects.</p>
+        <p className="intro__statement" data-words>Master Craft International, a division of Concord Pacific Corp., distributes a diverse selection of quality building materials and architectural products for residential and commercial construction, remodeling, and development projects.</p>
         <div className="tm-intro__cols">
           <p className="lead" data-fade>Our product categories include roofing materials, interior and exterior doors, architectural sliding and folding glass doors, and other construction materials.</p>
-          <p data-fade="0.1">Through domestic and international sourcing, Concord Pacific Corp. offers building products designed to meet the needs of contractors, builders, developers, architects, and construction professionals.</p>
+          <p data-fade="0.1">Through domestic and international sourcing, Master Craft International offers building products designed to meet the needs of contractors, builders, developers, architects, and construction professionals.</p>
         </div>
       </section>
 
@@ -186,7 +186,7 @@ export default function BuildingMaterials() {
         <div>
           <Eyebrow n="06">Domestic &amp; International Distribution</Eyebrow>
           <p className="display" data-split>Quality products. Global sourcing. <em>Professional service.</em></p>
-          <p className="lead" data-fade>Concord Pacific Corp. is committed to developing a diverse portfolio of building materials and architectural products sourced from the United States and international markets.</p>
+          <p className="lead" data-fade>Master Craft International, a division of Concord Pacific Corp., is committed to developing a diverse portfolio of building materials and architectural products sourced from the United States and international markets.</p>
           <p data-fade="0.1">We continuously search for exceptional manufacturers, innovative companies and distinctive products that bring greater quality, beauty, performance, technology and value to the American construction market.</p>
         </div>
       </section>
@@ -235,7 +235,7 @@ export default function BuildingMaterials() {
       <section className="wrap tm-quote">
         <Media img="arch-timeless" reveal="left" />
         <div>
-          <Eyebrow n="09">The Concord Pacific Advantage</Eyebrow>
+          <Eyebrow n="09">The Master Craft International Advantage</Eyebrow>
           <p className="display" data-split>We don't just sell building materials. <em>We understand buildings.</em></p>
           <p className="lead" data-fade>A beautiful product isn't enough. It has to arrive when it's needed. It has to install properly. It has to meet the project's specifications. It has to perform. And ultimately, it has to make sense economically. That is why we look at every product through the combined perspective of a developer, builder, distributor and customer.</p>
         </div>

@@ -9,71 +9,73 @@
 import { DEVELOPMENTS } from './developments'
 import { CONTACT } from './site'
 
-export const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://concord-pacific-final.vercel.app').replace(/\/+$/, '')
-export const SITE_NAME = 'Concord Pacific, Corp.'
+export const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://master-craft-international.vercel.app').replace(/\/+$/, '')
+export const SITE_NAME = 'Master Craft International — a division of Concord Pacific Corp.'
+export const BRAND = 'Master Craft International'
+export const PARENT = 'Concord Pacific Corp.'
 export const DEFAULT_IMAGE = 'estate-grand'
 
 /* Per-page settings. Keep titles under ~60 characters and descriptions under ~160. */
 export const PAGES = {
   '/': {
-    title: 'Luxury Real Estate Developer in Beverly Hills | Concord Pacific',
-    description: 'Beverly Hills real estate developer creating exceptional private estates and luxury condominium residences in Beverly Hills, Bel-Air and Greater Los Angeles.',
+    title: 'Luxury Real Estate Developer in Beverly Hills | Master Craft International',
+    description: 'Master Craft International, a division of Concord Pacific Corp., is a Beverly Hills real estate developer creating exceptional private estates and luxury condominium residences in Beverly Hills, Bel-Air and Greater Los Angeles.',
     image: 'estate-pool-sunset',
     crumb: 'Home',
   },
   '/developments': {
-    title: 'Luxury Estates & Condominium Developments | Concord Pacific',
-    description: 'Explore the Concord Pacific, Corp. portfolio — private estates and condominium residences in Beverly Hills, Bel-Air and Greater Los Angeles.',
+    title: 'Luxury Estates & Condominium Developments | Master Craft International',
+    description: 'Explore the Master Craft International portfolio — private estates and condominium residences in Beverly Hills, Bel-Air and Greater Los Angeles.',
     image: 'estate-heritage',
     crumb: 'Developments',
     type: 'CollectionPage',
   },
   '/signature-residences': {
-    title: 'Signature Residences & Luxury Interiors | Concord Pacific',
-    description: 'Signature interiors, chef’s kitchens, primary suites and indoor-outdoor living spaces across Concord Pacific luxury residences in Beverly Hills and Bel-Air.',
+    title: 'Signature Residences & Luxury Interiors | Master Craft International',
+    description: 'Signature interiors, chef’s kitchens, primary suites and indoor-outdoor living spaces across Master Craft International luxury residences in Beverly Hills and Bel-Air.',
     image: 'interior-great-room',
     crumb: 'Signature Residences',
   },
   '/design-and-materials': {
-    title: 'Design & Materials | Concord Pacific Luxury Residences',
-    description: 'Kitchens, bathrooms, hardwood flooring, natural stone, millwork, lighting and landscape — the materials and craftsmanship behind every Concord Pacific residence.',
+    title: 'Design & Materials | Master Craft International',
+    description: 'Kitchens, bathrooms, hardwood flooring, natural stone, millwork, lighting and landscape — the materials and craftsmanship behind every Master Craft International residence.',
     image: 'interior-great-room',
     crumb: 'Design & Materials',
   },
   '/our-vision': {
-    title: 'Our Vision & Development Philosophy | Concord Pacific',
-    description: 'Vision creates value. The principles behind Concord Pacific, Corp. — exceptional locations, architectural integrity, uncompromising quality and enduring value.',
+    title: 'Our Vision & Development Philosophy | Master Craft International',
+    description: 'Vision creates value. The principles behind Master Craft International, a division of Concord Pacific Corp. — exceptional locations, architectural integrity, uncompromising quality and enduring value.',
     image: 'estate-viewpoint',
     crumb: 'Our Vision',
   },
   '/international-team': {
-    title: 'International Team of Architects & Builders | Concord Pacific',
-    description: 'Led by CEO Roman Alexander, Concord Pacific unites award-winning architects, engineers, interior designers and builders from the United States and abroad.',
+    title: 'International Team of Architects & Builders | Master Craft International',
+    description: 'Led by CEO Roman Alexander, Master Craft International unites award-winning architects, engineers, interior designers and builders from the United States and abroad.',
     image: 'construction-team',
     crumb: 'International Team',
   },
   '/company': {
-    title: 'About Concord Pacific, Corp. — Beverly Hills Developer',
-    description: 'Concord Pacific, Corp. is headquartered in Beverly Hills, California, developing exceptional private estates and condominium residences across Greater Los Angeles.',
+    title: 'About Master Craft International — Concord Pacific Corp.',
+    description: 'Master Craft International, a division of Concord Pacific Corp., is headquartered in Beverly Hills, developing exceptional private estates and condominium residences across Greater Los Angeles.',
     image: 'loc-beverly-hills-entry',
     crumb: 'Company',
     type: 'AboutPage',
   },
   '/building-materials': {
-    title: 'Building Materials & Architectural Products | Concord Pacific',
+    title: 'Building Materials & Architectural Products | Master Craft International',
     description: 'Roofing materials, interior and exterior doors, sliding and folding glass doors and more — quality building products from the USA and internationally.',
     image: 'roof-modern-farmhouse',
     crumb: 'Building Materials & Distribution',
   },
   '/opportunities': {
-    title: 'Development Opportunities & Joint Ventures | Concord Pacific',
+    title: 'Development Opportunities & Joint Ventures | Master Craft International',
     description: 'A discreet acquisition and partnership practice for property owners, brokers, investors and joint-venture partners in Beverly Hills, Bel-Air and Los Angeles.',
     image: 'estate-summit',
     crumb: 'Opportunities',
   },
   '/contact': {
-    title: 'Contact Concord Pacific, Corp. | Beverly Hills, California',
-    description: 'Contact Concord Pacific, Corp. in Beverly Hills about developments, residences, building materials or partnerships. All inquiries are handled in confidence.',
+    title: 'Contact Master Craft International | Beverly Hills, CA',
+    description: 'Contact Master Craft International, a division of Concord Pacific Corp., in Beverly Hills about developments, residences, building materials or partnerships. All inquiries are handled in confidence.',
     image: 'estate-pool-tall',
     crumb: 'Contact',
     type: 'ContactPage',
@@ -81,7 +83,7 @@ export const PAGES = {
 }
 
 const NOT_FOUND = {
-  title: 'Page Not Found | Concord Pacific, Corp.',
+  title: 'Page Not Found | Master Craft International',
   description: 'This page could not be found.',
   image: 'estate-horizon',
   noindex: true,
@@ -98,10 +100,10 @@ export const IMAGE_ALT = {
   'condo-living': 'Open-plan condominium living room with skyline views',
   'condo-rooftop-pool': 'Condominium rooftop infinity pool at sunset',
   'condo-sunset': 'Beverly Hills condominium residences at sunset',
-  'construction-plans': 'Concord Pacific team reviewing construction plans on site',
+  'construction-plans': 'Master Craft International team reviewing construction plans on site',
   'construction-site': 'Engineers reviewing drawings at a construction site',
   'construction-team-tall': 'Development team reviewing plans on a construction site above Los Angeles',
-  'construction-team': 'Concord Pacific architects and builders reviewing plans on site',
+  'construction-team': 'Master Craft International architects and builders reviewing plans on site',
   'estate-fire-terrace': 'Bel-Air estate pool terrace with sunken fire lounge',
   'estate-grand': 'Terraced Beverly Hills estate with infinity pool overlooking the city',
   'estate-heritage': 'Modern classic estate with reflecting pool and palm trees',
@@ -169,10 +171,10 @@ export const IMAGE_ALT = {
   'plans-floors': 'Architectural floor plans for a residential development',
   'plans-section': 'Architectural section drawing of a condominium building',
   'team-ceo-model': 'CEO Roman Alexander reviewing a residence model with architects and designers',
-  'team-ceo-office': 'Concord Pacific leadership in the Beverly Hills studio',
-  'team-ceo-portrait': 'Roman Alexander, CEO of Concord Pacific, Corp.',
+  'team-ceo-office': 'Master Craft International leadership in the Beverly Hills studio',
+  'team-ceo-portrait': 'Roman Alexander, CEO of Master Craft International, a division of Concord Pacific Corp.',
   'team-disciplines-overview': 'Architecture, engineering, interiors and landscape teams reviewing a residence model',
-  'team-office': 'Concord Pacific development team in the Beverly Hills studio',
+  'team-office': 'Master Craft International development team in the Beverly Hills studio',
   'team-process-overview': 'Development process: site selection, feasibility, market potential and a singular vision',
   'team-vision-reality': 'From vision to reality — construction of a residential tower at sunset',
   transformation: 'Before and after transformation of a residential property',
@@ -248,7 +250,7 @@ export function seoFor(path) {
   if (d) {
     return {
       path: clean,
-      title: `${d.name} — ${d.type} | Concord Pacific`,
+      title: `${d.name} — ${d.type} | Master Craft International`,
       description: clip(`${d.tagline} ${d.vision}`),
       image: d.hero,
       crumbs: [['Developments', '/developments'], [d.name, clean]],
@@ -268,7 +270,9 @@ export function jsonLdFor(path) {
   const org = {
     '@type': 'Organization',
     '@id': `${SITE_URL}/#organization`,
-    name: SITE_NAME,
+    name: BRAND,
+    alternateName: SITE_NAME,
+    parentOrganization: { '@type': 'Organization', name: PARENT },
     url: `${SITE_URL}/`,
     logo: { '@type': 'ImageObject', url: imageUrl('logo-full') },
     image: imageUrl(DEFAULT_IMAGE),

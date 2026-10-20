@@ -100,7 +100,7 @@ export function CtaBand({ title = <>Let’s create something <em>exceptional.</e
       <Media img={img} reveal="center" parallax="10" className="cta__bg" />
       <div className="cta__shade" />
       <div className="cta__in wrap">
-        <Eyebrow light>Concord Pacific, Corp.</Eyebrow>
+        <Eyebrow light>Master Craft International · A division of Concord Pacific Corp.</Eyebrow>
         <h2 className="h1 light" data-split>{title}</h2>
         <div data-fade="0.2"><Btn to={to} variant="btn--light">{label}</Btn></div>
       </div>

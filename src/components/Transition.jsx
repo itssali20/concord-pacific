@@ -46,7 +46,7 @@ export function TransitionProvider({ children }) {
       {children}
       <div className="pt" ref={el} aria-hidden="true">
         <div className="pt__panel" /><div className="pt__panel" /><div className="pt__panel" />
-        <div className="pt__word">Concord <em>Pacific</em></div>
+        <div className="pt__word">Master Craft <em>International</em></div>
       </div>
     </Ctx.Provider>
   )

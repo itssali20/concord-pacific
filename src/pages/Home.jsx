@@ -113,10 +113,11 @@ function Hero() {
       <div className="hero__content hero__fadeout-wrap">
         <p className="hero__in hero__fadeout eyebrow eyebrow--light">Beverly Hills, California</p>
         <h1 className="hero__title">
-          <span className="hero__word hero__word--a">Concord</span>{' '}
-          <span className="hero__word hero__word--b">Pacific</span>
-          <span className="sr-only"> — Luxury Real Estate Development in Beverly Hills, California</span>
+          <span className="hero__word hero__word--a">Master Craft</span>{' '}
+          <span className="hero__word hero__word--b">International</span>
+          <span className="sr-only"> — a division of Concord Pacific Corp. Luxury real estate development in Beverly Hills, California</span>
         </h1>
+        <p className="hero__in hero__fadeout hero__div">A Division of Concord Pacific Corp.</p>
         <span className="hero__rule hero__fadeout" />
         <p className="hero__in hero__fadeout hero__tag">Exceptional Properties. <em>Extraordinary Living.</em></p>
         <div className="hero__in hero__fadeout"><Btn to="/developments" variant="btn--light">Explore our developments</Btn></div>
@@ -144,7 +145,7 @@ function Intro() {
     <section className="intro wrap" ref={ref}>
       <Eyebrow n="01">Introduction</Eyebrow>
       <h2 className="intro__statement" data-words>
-        Concord Pacific, Corp. is a Beverly Hills–based real estate development company dedicated to creating exceptional residences in some of Southern California’s most distinguished communities.
+        Master Craft International, a division of Concord Pacific Corp., is a Beverly Hills–based real estate development company dedicated to creating exceptional residences in some of Southern California’s most distinguished communities.
       </h2>
       <div className="intro__grid">
         <Media img="interior-kitchen" className="intro__img-a" parallax="8" />
@@ -279,7 +280,7 @@ function Standard() {
     <section className="std" ref={ref}>
       <div className="std__pin">
         <div className="std__left">
-          <Eyebrow n="04" light>The Concord Pacific Standard</Eyebrow>
+          <Eyebrow n="04" light>The Master Craft International Standard</Eyebrow>
           <h2 className="h1 light" data-split>Six disciplines. <em>One uncompromising</em> standard.</h2>
           <ol className="std__list">
             {PILLARS.map((p, i) => (
@@ -333,14 +334,14 @@ function TeamSection() {
           <h2 className="h1" data-split>International talent. <em>One vision.</em></h2>
         </div>
         <div className="team__copy">
-          <p className="lead" data-fade>Concord Pacific brings together a talented international multidisciplinary team of architects, structural engineers, civil engineers, interior designers, landscape designers, consultants, builders, craftsmen and development professionals.</p>
+          <p className="lead" data-fade>Master Craft International brings together a talented international multidisciplinary team of architects, structural engineers, civil engineers, interior designers, landscape designers, consultants, builders, craftsmen and development professionals.</p>
           <p data-fade="0.1">Each discipline contributes specialized expertise while working toward a unified architectural and development vision. Our international perspective draws upon ideas, materials, technologies and design influences from around the world — while remaining deeply connected to Beverly Hills, Bel-Air and Southern California.</p>
           <div data-fade="0.2"><Btn to="/international-team">Meet the disciplines</Btn></div>
         </div>
       </div>
       <div className="wrap team__photos tp__grid">
         <figure className="tp__item tp__item--a">
-          <VideoMedia src="/videos/pixverseVid.mp4" poster="/videos/pixverseVid-poster.jpg" alt="Concord Pacific development team collaborating in the Beverly Hills studio" reveal="left" />
+          <VideoMedia src="/videos/pixverseVid.mp4" poster="/videos/pixverseVid-poster.jpg" alt="Master Craft International development team collaborating in the Beverly Hills studio" reveal="left" />
           <figcaption>Planning, design & development — Beverly Hills studio</figcaption>
         </figure>
         <figure className="tp__item tp__item--b"><Media img="team-vision-reality" reveal="up" /><figcaption>From vision to reality</figcaption></figure>
@@ -448,10 +449,10 @@ function Film() {
       </div>
       <div className="wrap film__grid">
         <figure className="film__item film__item--full">
-          <VideoMedia src="/videos/Fullvideo.mp4" poster="/videos/Fullvideo-poster.jpg" alt="Concord Pacific — a cinematic tour of our residences" reveal="up" />
+          <VideoMedia src="/videos/Fullvideo.mp4" poster="/videos/Fullvideo-poster.jpg" alt="Master Craft International — a cinematic tour of our residences" reveal="up" />
           <figcaption data-fade>
             <span>Film</span>
-            <h3>The Concord Pacific experience.</h3>
+            <h3>The Master Craft International experience.</h3>
             <p>A cinematic walkthrough of the craftsmanship, light and scale that define every residence.</p>
           </figcaption>
         </figure>
@@ -570,7 +571,7 @@ function Statement() {
       <div className="stmt__body">
         <Eyebrow n="10">Company</Eyebrow>
         <h2 className="h1" data-split>Beverly Hills. Our home. <em>Our standard.</em></h2>
-        <p className="lead" data-fade>Concord Pacific, Corp. is headquartered in Beverly Hills, California, placing the company at the center of one of the world’s most sophisticated luxury residential markets.</p>
+        <p className="lead" data-fade>Master Craft International, a division of Concord Pacific Corp., is headquartered in Beverly Hills, California, placing the company at the center of one of the world’s most sophisticated luxury residential markets.</p>
         <p data-fade="0.1">Exceptional architecture, discretion, quality and attention to detail are not additions to our developments — they are fundamental to them.</p>
         <span className="rule" data-line />
         <dl className="stmt__facts" data-stagger>

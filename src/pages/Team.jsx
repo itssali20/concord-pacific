@@ -17,7 +17,7 @@ export default function Team() {
   })
   return (
     <div ref={ref}>
-      <PageHero img="construction-team" eyebrow="International Team" title={<>International talent. <em>One vision.</em></>} sub="At Concord Pacific, Corp., exceptional development begins with exceptional people." />
+      <PageHero img="construction-team" eyebrow="International Team" title={<>International talent. <em>One vision.</em></>} sub="At Master Craft International, a division of Concord Pacific Corp., exceptional development begins with exceptional people." />
 
       {/* Intro */}
       <section className="wrap tm-intro">
@@ -34,12 +34,12 @@ export default function Team() {
         <div className="wrap ceo__grid">
           <div className="ceo__media">
             <div className="ceo__frame" data-img="up"><img {...imgSrc('team-ceo-model')} alt="Roman Alexander, CEO, reviewing a residence model with the design team" loading="lazy" /></div>
-            <div className="ceo__frame ceo__frame--sm" data-img="left"><img {...imgSrc('team-ceo-portrait')} alt="Roman Alexander, CEO of Concord Pacific, Corp." loading="lazy" /></div>
+            <div className="ceo__frame ceo__frame--sm" data-img="left"><img {...imgSrc('team-ceo-portrait')} alt="Roman Alexander, CEO of Master Craft International, a division of Concord Pacific Corp." loading="lazy" /></div>
           </div>
           <div className="ceo__txt">
             <Eyebrow n="02" light>Leadership</Eyebrow>
             <h2 className="h1 light" data-split>{CEO.name}</h2>
-            <p className="ceo__role" data-fade>{CEO.role} · Concord Pacific, Corp.</p>
+            <p className="ceo__role" data-fade>{CEO.role} · Master Craft International · A division of Concord Pacific Corp.</p>
             {CEO.bio.map((b, i) => <p className="lead light" key={i} data-fade={i * 0.1}>{b}</p>)}
             <blockquote className="ceo__quote" data-fade="0.2">“Our objective is not simply to build. It is to create properties distinguished by architecture, craftsmanship and enduring value.”</blockquote>
           </div>
@@ -54,7 +54,7 @@ export default function Team() {
         </div>
         <div className="tp__grid">
           <figure className="tp__item tp__item--a">
-            <VideoMedia src="/videos/pixverseVid.mp4" poster="/videos/pixverseVid-poster.jpg" alt="Concord Pacific development team collaborating in the Beverly Hills studio" reveal="left" />
+            <VideoMedia src="/videos/pixverseVid.mp4" poster="/videos/pixverseVid-poster.jpg" alt="Master Craft International development team collaborating in the Beverly Hills studio" reveal="left" />
             <figcaption>Planning, design & development — Beverly Hills studio</figcaption>
           </figure>
           <figure className="tp__item tp__item--b"><Media img="team-vision-reality" reveal="up" /><figcaption>From vision to reality</figcaption></figure>
@@ -71,7 +71,7 @@ export default function Team() {
         <div className="tm__head">
           <Eyebrow n="04">The Disciplines</Eyebrow>
           <h2 className="h1" data-split>Global expertise. <em>Beverly Hills vision.</em></h2>
-          <p className="lead" data-fade>Concord Pacific assembles exceptional professionals according to the unique requirements of each development.</p>
+          <p className="lead" data-fade>Master Craft International assembles exceptional professionals according to the unique requirements of each development.</p>
         </div>
         <div className="tm__grid">
           <div className="acc">

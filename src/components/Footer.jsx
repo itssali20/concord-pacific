@@ -14,7 +14,7 @@ export default function Footer() {
     <footer className="ftr" ref={ref}>
       <div className="ftr__top wrap">
         <div>
-          <p className="eyebrow eyebrow--light" data-fade>Concord Pacific, Corp. · Beverly Hills, California</p>
+          <p className="eyebrow eyebrow--light" data-fade>Master Craft International · A division of Concord Pacific Corp. · Beverly Hills, California</p>
           <h2 className="ftr__title" data-split>Let’s create something <em>exceptional.</em></h2>
           <TLink to="/contact" className="btn btn--light" data-fade="0.2" data-hover><span>Begin a conversation</span><i className="btn__arrow" /></TLink>
         </div>
@@ -36,10 +36,10 @@ export default function Footer() {
         </div>
       </div>
       <div className="ftr__mega" aria-hidden="true">
-        <span className="ftr__mega-a">Concord</span><span className="ftr__mega-b">Pacific</span>
+        <span className="ftr__mega-a">Master Craft</span><span className="ftr__mega-b">International</span>
       </div>
       <div className="ftr__bottom wrap">
-        <span>© {new Date().getFullYear()} Concord Pacific, Corp. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Master Craft International, a division of Concord Pacific Corp. All rights reserved.</span>
         <span className="ftr__links">
           <TLink to="/developments">Developments</TLink><span>|</span>
           <TLink to="/opportunities">Opportunities</TLink><span>|</span>

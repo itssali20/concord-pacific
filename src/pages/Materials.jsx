@@ -32,7 +32,7 @@ export default function Materials() {
 
   return (
     <div ref={ref}>
-      <PageHero img="interior-great-room" eyebrow="Design & Materials" title={<>Every detail <em>matters.</em></>} sub="Kitchens, bathrooms, windows, natural stone, millwork and landscape — the craft behind every Concord Pacific residence." />
+      <PageHero img="interior-great-room" eyebrow="Design & Materials" title={<>Every detail <em>matters.</em></>} sub="Kitchens, bathrooms, windows, natural stone, millwork and landscape — the craft behind every Master Craft International residence." />
 
       <section className="wrap mt-intro">
         <Eyebrow n="01">Craftsmanship</Eyebrow>

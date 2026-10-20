@@ -15,7 +15,7 @@ export default function Contact() {
       <div className="ct__media">
         <Media img="estate-pool-tall" reveal="up" eager />
         <div className="ct__card">
-          <p className="eyebrow eyebrow--light">Concord Pacific, Corp.</p>
+          <p className="eyebrow eyebrow--light">Master Craft International · A division of Concord Pacific Corp.</p>
           <p className="h3 light">Beverly Hills, California</p>
           <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
           <a href={`tel:${CONTACT.phone.replace(/[^+\d]/g, '')}`}>{CONTACT.phone}</a>
